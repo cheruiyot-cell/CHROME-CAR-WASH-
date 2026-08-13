@@ -91,9 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Lazy load images (native loading attribute handles most, but ensure)
-  // Add smooth scroll for anchor links (already via CSS)
-
   // Automatic current year in footer
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) {

@@ -903,52 +903,10 @@ p {
   font-size: 0.9rem;
 }
 
-/* ---------- Mobile Sticky Bottom Bar ---------- */
-.mobile-bottom-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--color-dark);
-  padding: 0.6rem;
-  z-index: 999;
-  gap: 0.6rem;
-}
-
-.mobile-bottom-bar a {
-  flex: 1;
-  text-align: center;
-  padding: 0.7rem;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.mobile-bottom-bar .whatsapp-btn {
-  background-color: var(--color-whatsapp);
-  color: #fff;
-}
-
-.mobile-bottom-bar .call-btn {
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid var(--color-silver);
-}
-
-@media (max-width: 768px) {
-  .mobile-bottom-bar {
-    display: flex;
-  }
-
-  body {
-    padding-bottom: 70px; /* space for bottom bar */
-  }
-}
-
-/* ---------- Floating WhatsApp Button ---------- */
+/* ---------- Floating WhatsApp Button (only) ---------- */
 .floating-whatsapp {
   position: fixed;
-  bottom: 90px;
+  bottom: 20px;
   right: 20px;
   width: 56px;
   height: 56px;
@@ -966,10 +924,15 @@ p {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .floating-whatsapp {
-    bottom: 80px;
-  }
+/* Pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.floating-whatsapp.pulse {
+  animation: pulse 2s infinite;
 }
 
 /* ---------- Utility ---------- */
@@ -989,4 +952,3 @@ p {
   .section { padding: 3rem 0; }
   .contact-grid { grid-template-columns: 1fr; }
 }
-
