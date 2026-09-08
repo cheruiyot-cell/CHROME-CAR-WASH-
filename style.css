@@ -1242,5 +1242,13 @@ p {
   .section-title h2 { font-size: 2rem; }
 }
 .floating-whatsapp svg {
-  fill: #25D366; /* WhatsApp green */
+  display: none;
+}
+
+.floating-whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  background-image: url('path-to-your-green-icon.svg');
+  background-size: 28px 28px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
