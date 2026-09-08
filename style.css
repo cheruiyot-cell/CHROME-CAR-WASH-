@@ -1,7 +1,10 @@
 /* =========================================
    CHROME – Premium Car Wash & Detailing
-   Design System: Graphite & Chrome
+   Design System: Graphite & Chrome (gold accents)
    ========================================= */
+
+/* ---------- Import Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 /* ---------- CSS Variables ---------- */
 :root {
@@ -10,13 +13,16 @@
   --color-silver: #C9CED4;
   --color-ivory: #F5F4F0;
   --color-trust: #2E5E4E;
-  --color-whatsapp: #25D366;
+  --color-whatsapp: #D4AF37;          /* gold */
+  --color-whatsapp-light: #FFD700;    /* lighter gold */
   --color-text-light: #F5F4F0;
   --color-text-dark: #1A1D22;
   --color-text-muted: #8A929B;
   --color-border: rgba(201, 206, 212, 0.15);
   --font-heading: 'Fraunces', serif;
   --font-body: 'Manrope', sans-serif;
+  --font-calligraphy: 'Dancing Script', cursive;
+  --font-playful: 'Quicksand', sans-serif;
   --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
   --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
   --transition: all 0.3s ease;
@@ -43,6 +49,7 @@ body {
   color: var(--color-text-dark);
   background-color: var(--color-ivory);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img {
@@ -101,29 +108,36 @@ p {
 }
 
 .section-title h2 {
+  font-family: var(--font-calligraphy); /* calligraphy */
+  font-size: 2.8rem;
   margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
 }
 
 .section-title p {
   color: var(--color-text-muted);
   font-size: 1.1rem;
+  font-family: var(--font-playful);
 }
 
 .eyebrow {
   display: inline-block;
-  font-family: var(--font-body);
+  font-family: var(--font-playful);
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: var(--color-trust);
   margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--color-trust), #3d7a65);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
-  font-family: var(--font-body);
+  font-family: var(--font-playful);
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -135,6 +149,25 @@ p {
   border: 2px solid transparent;
   text-align: center;
   line-height: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer effect */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.btn:hover::before {
+  left: 150%;
 }
 
 .btn-primary {
@@ -146,6 +179,8 @@ p {
 .btn-primary:hover {
   background-color: var(--color-surface);
   border-color: var(--color-surface);
+  box-shadow: 0 4px 20px rgba(15, 17, 21, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -157,17 +192,20 @@ p {
 .btn-outline:hover {
   background-color: var(--color-dark);
   color: var(--color-text-light);
+  transform: translateY(-2px);
 }
 
 .btn-whatsapp {
-  background-color: var(--color-whatsapp);
+  background: linear-gradient(135deg, var(--color-whatsapp), var(--color-whatsapp-light));
   color: #fff;
-  border-color: var(--color-whatsapp);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .btn-whatsapp:hover {
-  background-color: #1FB955;
-  border-color: #1FB955;
+  background: linear-gradient(135deg, #B8962E, #D4AF37);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
 }
 
 .btn-light {
@@ -179,6 +217,7 @@ p {
 .btn-light:hover {
   background-color: var(--color-silver);
   border-color: var(--color-silver);
+  transform: translateY(-2px);
 }
 
 /* ---------- Announcement Bar ---------- */
@@ -190,6 +229,9 @@ p {
   font-size: 0.85rem;
   position: relative;
   z-index: 1001;
+  background: linear-gradient(135deg, var(--color-dark), #1a1d22, var(--color-dark));
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
 }
 
 .announcement-bar a {
@@ -198,7 +240,7 @@ p {
 }
 
 .announcement-bar a:hover {
-  color: #fff;
+  color: var(--color-whatsapp);
 }
 
 /* ---------- Header & Navigation ---------- */
@@ -223,15 +265,17 @@ p {
 }
 
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-family: var(--font-calligraphy); /* calligraphy */
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--color-silver);
   letter-spacing: 0.05em;
+  line-height: 1.2;
 }
 
 .logo span {
-  color: var(--color-trust);
+  color: var(--color-whatsapp);
+  font-size: 2.3rem;
 }
 
 .nav-menu {
@@ -259,7 +303,7 @@ p {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-trust);
+  background: linear-gradient(90deg, var(--color-whatsapp), var(--color-whatsapp-light));
   transition: var(--transition);
 }
 
@@ -280,7 +324,7 @@ p {
 }
 
 .nav-cta .phone-link:hover {
-  color: #fff;
+  color: var(--color-whatsapp);
 }
 
 .hamburger {
@@ -362,6 +406,20 @@ p {
   z-index: 1;
 }
 
+/* decorative gold blob */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+  z-index: 1;
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
 .hero .container {
   position: relative;
   z-index: 2;
@@ -371,6 +429,11 @@ p {
   color: var(--color-text-light);
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #F5F4F0 0%, #C9CED4 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
 }
 
 .hero p {
@@ -378,6 +441,7 @@ p {
   font-size: 1.2rem;
   max-width: 600px;
   margin-bottom: 2rem;
+  font-family: var(--font-playful);
 }
 
 .hero-cta {
@@ -396,7 +460,7 @@ p {
 }
 
 .hero-trust i {
-  color: var(--color-trust);
+  color: var(--color-whatsapp);
   margin-right: 0.3rem;
 }
 
@@ -419,10 +483,11 @@ p {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
+  font-family: var(--font-playful);
 }
 
 .social-proof-item .icon {
-  color: var(--color-trust);
+  color: var(--color-whatsapp);
   font-size: 1.2rem;
 }
 
@@ -453,6 +518,7 @@ p {
 .problem .lead {
   font-size: 1.2rem;
   line-height: 1.8;
+  font-family: var(--font-playful);
 }
 
 /* ---------- Services Cards ---------- */
@@ -469,17 +535,38 @@ p {
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* gold underline on hover */
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-whatsapp), var(--color-whatsapp-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
 }
 
 .service-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .service-card .icon {
   font-size: 2rem;
-  color: var(--color-trust);
+  color: var(--color-whatsapp);
   margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
 }
 
 .service-card h3 {
@@ -490,6 +577,8 @@ p {
   font-weight: 600;
   color: var(--color-trust);
   margin-bottom: 0.5rem;
+  font-family: var(--font-playful);
+  font-size: 1.1rem;
 }
 
 .service-card .time {
@@ -511,12 +600,21 @@ p {
   background: rgba(255,255,255,0.05);
   border-radius: 8px;
   border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  border-color: var(--color-whatsapp);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
 .feature-item .icon {
   font-size: 2rem;
-  color: var(--color-trust);
+  color: var(--color-whatsapp);
   margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
 }
 
 /* ---------- How It Works Steps ---------- */
@@ -533,6 +631,12 @@ p {
   background: #fff;
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.step:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
 .step::before {
@@ -541,7 +645,7 @@ p {
   position: absolute;
   top: -20px;
   left: 20px;
-  background-color: var(--color-trust);
+  background: linear-gradient(135deg, var(--color-whatsapp), var(--color-whatsapp-light));
   color: #fff;
   width: 40px;
   height: 40px;
@@ -551,6 +655,7 @@ p {
   justify-content: center;
   font-weight: 600;
   font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(212,175,55,0.3);
 }
 
 .step h3 {
@@ -572,11 +677,17 @@ p {
   border: 1px solid var(--color-border);
   text-align: center;
   position: relative;
+  transition: var(--transition);
+}
+
+.pricing-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
 .pricing-card.highlight {
-  border: 2px solid var(--color-trust);
-  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-whatsapp);
+  box-shadow: 0 8px 30px rgba(212,175,55,0.15);
 }
 
 .pricing-card .badge {
@@ -584,13 +695,14 @@ p {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-trust);
+  background: linear-gradient(135deg, var(--color-whatsapp), var(--color-whatsapp-light));
   color: #fff;
   padding: 0.3rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(212,175,55,0.3);
 }
 
 .pricing-card .price {
@@ -598,6 +710,7 @@ p {
   font-weight: 600;
   color: var(--color-dark);
   margin-bottom: 0.5rem;
+  font-family: var(--font-playful);
 }
 
 .pricing-card .price span {
@@ -637,11 +750,12 @@ p {
   font-size: 0.9rem;
   transition: var(--transition);
   white-space: nowrap;
+  font-family: var(--font-playful);
 }
 
 .filter-chip.active,
 .filter-chip:hover {
-  background-color: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-dark), var(--color-surface));
   color: #fff;
   border-color: var(--color-dark);
 }
@@ -664,11 +778,11 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .gallery-item .caption {
@@ -680,6 +794,7 @@ p {
   color: #fff;
   padding: 1rem;
   font-size: 0.9rem;
+  font-family: var(--font-playful);
 }
 
 /* Before/After Slider */
@@ -691,6 +806,7 @@ p {
   overflow: hidden;
   user-select: none;
   aspect-ratio: 4/3;
+  border-radius: 8px;
 }
 
 .before-after img {
@@ -726,6 +842,7 @@ p {
   background: #fff;
   z-index: 4;
   pointer-events: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .before-after .divider::after {
@@ -734,7 +851,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
+  background: linear-gradient(135deg, var(--color-whatsapp), var(--color-whatsapp-light));
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -742,8 +859,8 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  color: var(--color-dark);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* ---------- Testimonials ---------- */
@@ -759,16 +876,25 @@ p {
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
 .testimonial-card .stars {
-  color: var(--color-trust);
+  color: var(--color-whatsapp);
   margin-bottom: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
 }
 
 .testimonial-card .quote {
   font-style: italic;
   margin-bottom: 1rem;
+  font-family: var(--font-playful);
 }
 
 .testimonial-card .author {
@@ -778,6 +904,7 @@ p {
 .testimonial-card .location {
   color: var(--color-text-muted);
   font-size: 0.9rem;
+  font-family: var(--font-playful);
 }
 
 /* ---------- FAQ Accordion ---------- */
@@ -792,6 +919,12 @@ p {
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item.active {
+  box-shadow: var(--shadow-md);
+  border-left: 3px solid var(--color-whatsapp);
 }
 
 .faq-question {
@@ -806,16 +939,19 @@ p {
   width: 100%;
   text-align: left;
   font-size: 1rem;
+  font-family: var(--font-body);
 }
 
 .faq-question::after {
   content: '+';
   font-size: 1.5rem;
   transition: var(--transition);
+  color: var(--color-whatsapp);
 }
 
 .faq-item.active .faq-question::after {
   content: '−';
+  transform: rotate(180deg);
 }
 
 .faq-answer {
@@ -846,6 +982,12 @@ p {
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
   margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.contact-info-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .contact-info-card h3 {
@@ -853,7 +995,8 @@ p {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -861,10 +1004,20 @@ p {
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 1rem;
+  transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--color-whatsapp);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+  outline: none;
 }
 
 .contact-form textarea {
   min-height: 120px;
+  resize: vertical;
 }
 
 /* ---------- Footer ---------- */
@@ -884,16 +1037,18 @@ p {
 .footer h4 {
   color: #fff;
   margin-bottom: 1rem;
+  font-family: var(--font-heading);
 }
 
 .footer a {
   color: var(--color-silver);
   display: block;
   margin-bottom: 0.5rem;
+  font-family: var(--font-playful);
 }
 
 .footer a:hover {
-  color: #fff;
+  color: var(--color-whatsapp);
 }
 
 .footer-bottom {
@@ -903,7 +1058,7 @@ p {
   font-size: 0.9rem;
 }
 
-/* ---------- Floating WhatsApp Button (only) ---------- */
+/* ---------- Floating WhatsApp Button (gold) ---------- */
 .floating-whatsapp {
   position: fixed;
   bottom: 20px;
@@ -911,28 +1066,63 @@ p {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: var(--color-whatsapp);
+  background: linear-gradient(135deg, var(--color-whatsapp), var(--color-whatsapp-light));
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(212,175,55,0.4);
   z-index: 998;
   transition: var(--transition);
 }
 
 .floating-whatsapp:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: 0 6px 30px rgba(212,175,55,0.5);
+}
+
+.floating-whatsapp svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
 }
 
 /* Pulse animation */
 @keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.7); }
+  70% { transform: scale(1.08); box-shadow: 0 0 0 20px rgba(212,175,55,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0); }
 }
 
 .floating-whatsapp.pulse {
   animation: pulse 2s infinite;
+}
+
+/* ---------- Keyframe Animations ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ---------- Scroll Reveal Animations ---------- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-on-scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ---------- Utility ---------- */
@@ -951,4 +1141,5 @@ p {
   .hero h1 { font-size: 2.8rem; }
   .section { padding: 3rem 0; }
   .contact-grid { grid-template-columns: 1fr; }
+  .section-title h2 { font-size: 2rem; }
 }

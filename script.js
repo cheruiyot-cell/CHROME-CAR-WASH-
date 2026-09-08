@@ -1,5 +1,5 @@
 /* =========================================
-   CHROME – Main JavaScript
+   CHROME – Main JavaScript (with scroll reveal)
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -89,6 +89,27 @@ document.addEventListener('DOMContentLoaded', function() {
         update();
       }
     });
+  }
+
+  // Scroll reveal animations (premium subtle movements)
+  const animatedElements = document.querySelectorAll(
+    '.section-title, .service-card, .pricing-card, .testimonial-card, .step, .feature-item, .contact-info-card'
+  );
+
+  if (animatedElements.length > 0) {
+    // add the initial hidden state via CSS class
+    animatedElements.forEach(el => el.classList.add('animate-on-scroll'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-on-scroll-visible');
+          observer.unobserve(entry.target); // only animate once
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    animatedElements.forEach(el => observer.observe(el));
   }
 
   // Automatic current year in footer
