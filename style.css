@@ -1241,3 +1241,6 @@ p {
   .hero-split { grid-template-columns: 1fr; }
   .section-title h2 { font-size: 2rem; }
 }
+.floating-whatsapp svg {
+  fill: #25D366; /* WhatsApp green */
+}
