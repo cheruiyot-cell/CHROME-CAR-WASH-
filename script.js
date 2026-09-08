@@ -1,5 +1,5 @@
 /* =========================================
-   CHROME – Main JavaScript (with scroll reveal)
+   CHROME – Main JavaScript (with accessibility)
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const navMenu = document.querySelector('.nav-menu');
   if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
+      const isOpen = hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
       navMenu.classList.toggle('active');
     });
 
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         navMenu.classList.remove('active');
       });
     });
@@ -55,9 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
   if (filterChips.length > 0 && galleryItems.length > 0) {
     filterChips.forEach(chip => {
       chip.addEventListener('click', () => {
-        // Remove active from all chips
-        filterChips.forEach(c => c.classList.remove('active'));
+        filterChips.forEach(c => {
+          c.classList.remove('active');
+          c.setAttribute('aria-pressed', 'false');
+        });
         chip.classList.add('active');
+        chip.setAttribute('aria-pressed', 'true');
         const filter = chip.dataset.filter;
 
         galleryItems.forEach(item => {
@@ -85,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
           divider.style.left = `${val}%`;
         };
         range.addEventListener('input', update);
-        // initial set
         update();
       }
     });
@@ -97,19 +101,40 @@ document.addEventListener('DOMContentLoaded', function() {
   );
 
   if (animatedElements.length > 0) {
-    // add the initial hidden state via CSS class
     animatedElements.forEach(el => el.classList.add('animate-on-scroll'));
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-on-scroll-visible');
-          observer.unobserve(entry.target); // only animate once
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     animatedElements.forEach(el => observer.observe(el));
+  }
+
+  // Contact form handler (callback form)
+  const callbackForm = document.getElementById('callback-form');
+  if (callbackForm) {
+    callbackForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const statusDiv = document.getElementById('form-status');
+      const nameInput = callbackForm.querySelector('input[type="text"]');
+      const phoneInput = callbackForm.querySelector('input[type="tel"]');
+
+      if (!nameInput.value.trim() || !phoneInput.value.trim()) {
+        statusDiv.textContent = 'Please fill in your name and phone number.';
+        statusDiv.style.color = 'red';
+        return;
+      }
+
+      // Simulate submission (replace with actual AJAX or WhatsApp link if needed)
+      statusDiv.textContent = 'Thank you! We will call you back within 30 minutes.';
+      statusDiv.style.color = 'green';
+      callbackForm.reset();
+    });
   }
 
   // Automatic current year in footer
