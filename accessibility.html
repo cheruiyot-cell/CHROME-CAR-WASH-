@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Accessibility Statement — CHROME Car Wash & Detailing</title>
+  <meta name="description" content="CHROME's accessibility statement — what we tested, what we target (WCAG 2.1 AA), known limitations, and how to send feedback.">
+  <meta name="theme-color" content="#0F1115">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CHROME Car Wash & Detailing">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:title" content="Accessibility Statement — CHROME">
+  <meta property="og:description" content="WCAG 2.1 AA target, testing notes, known limitations, and feedback channel.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://chrome-carwash.example/accessibility.html">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Accessibility Statement — CHROME">
+  <meta name="twitter:description" content="WCAG 2.1 AA target. Read our testing notes and known limitations.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+
+  <!-- Canonical & PWA -->
+  <link rel="canonical" href="https://chrome-carwash.example/accessibility.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://wa.me">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="announcement-bar" id="announcement-bar">
+    Accessibility statement. <a href="index.html">Back to site</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
+  </div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="case-study.html">Case study</a></li>
+        <li><a href="styleguide.html">Style guide</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li class="nav-menu-cta"><a href="index.html" class="btn btn-whatsapp">See live site</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
+        </button>
+        <a href="index.html" class="btn btn-whatsapp nav-cta-desktop">See site</a>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="section section-light" style="padding-top:3.5rem;">
+      <div class="container">
+        <div class="article">
+          <span class="eyebrow">ACCESSIBILITY</span>
+          <h1 style="font-size:2.5rem;margin-bottom:0.75rem;">Accessibility statement</h1>
+          <p class="lead">CHROME is designed so that everyone — including people using screen readers, keyboard navigation, or reduced-motion settings — can learn about our services and book a wash.</p>
+
+          <div class="a11y-badges" role="list">
+            <span class="a11y-badge" role="listitem">WCAG 2.1 AA target</span>
+            <span class="a11y-badge" role="listitem">Keyboard navigable</span>
+            <span class="a11y-badge" role="listitem">Screen reader tested</span>
+            <span class="a11y-badge" role="listitem">Reduced motion supported</span>
+            <span class="a11y-badge" role="listitem">Zoom-friendly to 200%</span>
+          </div>
+
+          <h2>Our commitment</h2>
+          <p>This site aims to conform to <a href="https://www.w3.org/TR/WCAG21/" rel="noopener">WCAG 2.1</a> at Level AA. Accessibility is treated as a gate — not a nice-to-have — because a car wash that can only be booked by some people is broken.</p>
+
+          <h2>What we've done</h2>
+          <ul>
+            <li><strong>Semantic structure.</strong> Every page uses <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, and a single <code>&lt;h1&gt;</code>.</li>
+            <li><strong>Skip link.</strong> Keyboard users can jump straight to the main content.</li>
+            <li><strong>Contrast.</strong> All interactive text passes AA. The WhatsApp CTA uses dark-on-gold for a contrast ratio of ~8.6:1.</li>
+            <li><strong>Focus states.</strong> Every interactive element shows a visible focus ring with a dark underlay, so focus stays visible on light and dark surfaces alike.</li>
+            <li><strong>Keyboard support.</strong> Mobile menu, FAQ accordion, gallery filters, theme toggle, and lightbox are all operable without a mouse. Escape closes overlays. The lightbox traps focus while open and restores it on close.</li>
+            <li><strong>Screen reader labels.</strong> Buttons, icon-only controls, and form inputs all have accessible names. Decorative icons carry <code>aria-hidden</code>.</li>
+            <li><strong>Form design.</strong> Inputs are always labelled (not placeholder-only), use semantic types (<code>tel</code>, <code>name</code>), and set <code>autocomplete</code> where relevant.</li>
+            <li><strong>Motion.</strong> The site respects <code>prefers-reduced-motion</code>. Animations are subtle and never necessary to understand content.</li>
+            <li><strong>Responsive.</strong> The layout remains usable from 320px upwards and when zoomed to 200%.</li>
+            <li><strong>Theme.</strong> A manual light/dark toggle is available in the header, independent of OS preference, and syncs the browser <code>theme-color</code>.</li>
+            <li><strong>Language.</strong> Swahili phrases are tagged with <code>lang="sw"</code> so screen readers switch pronunciation correctly.</li>
+          </ul>
+
+          <h2>How this site was tested</h2>
+          <ul>
+            <li>Contrast ratios checked with browser dev tools and the WebAIM contrast checker.</li>
+            <li>Automated scan with axe DevTools.</li>
+            <li>Manual keyboard walkthrough of every page — tab order, focus visibility, Escape handling.</li>
+            <li>Screen reader pass with VoiceOver (Safari, macOS) and TalkBack (Android).</li>
+            <li>Layout verified at 320px, 375px, 768px, 1024px, 1440px widths, and at 200% browser zoom.</li>
+          </ul>
+
+          <h2>Known limitations</h2>
+          <ul>
+            <li>The embedded Google Map is a third-party iframe and its accessibility is outside our control. A textual address is always provided alongside it.</li>
+            <li>Placeholder photography is sourced from Unsplash. Alt text is descriptive but describes the <em>photo</em>, not the specific service shown — this will be replaced with the studio's own images.</li>
+            <li>The booking flow persists "last booking" in <code>localStorage</code>. Screen reader users are notified of the "Book again" option via a labelled button, but the persistence is silent by default.</li>
+          </ul>
+
+          <h2>Send us feedback</h2>
+          <p>If you encounter an accessibility barrier on this site, please tell us — we treat this as a bug, not a complaint.</p>
+          <ul>
+            <li>WhatsApp: <a href="https://wa.me/254702555093">0702 555 093</a></li>
+            <li>Phone: <a href="tel:+254702555093">0702 555 093</a></li>
+          </ul>
+          <p>We aim to acknowledge accessibility feedback within 48 hours.</p>
+
+          <h2>Ongoing work</h2>
+          <ul>
+            <li>Automated accessibility tests (axe-core) in the CI pipeline.</li>
+            <li>Manual review on a low-end Android device each release.</li>
+            <li>Accessibility snapshot added to the case study page.</li>
+          </ul>
+
+          <p class="text-muted" style="font-size:0.9rem;margin-top:2rem;"><em>Last updated: <span id="a11y-updated">2025</span>.</em></p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>CHROME</h4><p>Premium car wash &amp; detailing in Donholm, Nairobi.</p></div>
+        <div><h4>Site</h4><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact</h4><a href="tel:+254702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
+        <div><h4>Hours</h4><p>Mon–Sun: 6:00 AM – 7:00 PM</p><p>Payment: M-Pesa · Cash</p></div>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-meta-label">Project</span>
+        <a href="case-study.html">Case study</a>
+        <a href="styleguide.html">Style guide</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
+        <p class="footer-note">Concept project — brand and content created for portfolio purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('a11y-updated').textContent = new Date().toLocaleDateString('en-KE', { month: 'long', year: 'numeric' });</script>
+</body>
+</html>

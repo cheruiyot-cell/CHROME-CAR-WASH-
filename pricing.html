@@ -2,191 +2,251 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Pricing — CHROME Car Wash & Detailing Donholm, Nairobi</title>
   <meta name="description" content="Transparent pricing for CHROME's premium car wash and detailing services in Donholm. Express hand wash, interior deep clean, full detailing, ceramic coating, engine bay, leather care, and fleet packages. Book via WhatsApp 0702 555 093.">
+  <meta name="theme-color" content="#0F1115">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHROME Car Wash & Detailing">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:title" content="Pricing — CHROME Car Wash & Detailing">
+  <meta property="og:description" content="Clear, fair prices from KSh 500. No hidden charges. Pay after approval.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&h=630&q=75">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://chrome-carwash.example/pricing.html">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pricing — CHROME Car Wash & Detailing">
+  <meta name="twitter:description" content="Transparent pricing from KSh 500. Book via WhatsApp 0702 555 093.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&h=630&q=75">
+
+  <!-- Canonical & PWA -->
+  <link rel="canonical" href="https://chrome-carwash.example/pricing.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://wa.me">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="announcement-bar">
-    Same-day slots available in Donholm. <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="announcement-bar" id="announcement-bar">
+    Same-day slots available in Donholm.
+    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
   </div>
+
   <header class="header">
-    <nav class="nav container">
-      <a href="index.html" class="logo">CHROME</a>
-      <ul class="nav-menu">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="services.html">Services</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="pricing.html" class="active" aria-current="page">Pricing</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li class="nav-menu-cta"><a href="book.html" class="btn btn-whatsapp">Book a service</a></li>
+        <li class="nav-menu-cta"><a href="tel:+254702555093" class="phone-link">Call 0702 555 093</a></li>
       </ul>
-      <div class="nav-cta">
-        <a href="https://wa.me/254702555093" class="btn btn-whatsapp">WhatsApp Us</a>
-        <a href="tel:0702555093" class="phone-link">Call 0702 555 093</a>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
+        </button>
+        <a href="tel:+254702555093" class="nav-icon-btn" aria-label="Call 0702 555 093">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="https://wa.me/254702555093" class="nav-icon-btn nav-icon-btn-wa" aria-label="WhatsApp us">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+        </a>
+        <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
+        <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
-    <div class="container">
-      <span class="eyebrow">PRICING</span>
-      <h1>Clear, fair, no surprises.</h1>
-      <p>No hidden charges. You pay only after you approve the final result. We believe in transparent pricing — you see exactly what you pay for before we start.</p>
-      <div class="hero-cta">
-        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service." class="btn btn-primary">Book Your Wash — WhatsApp Us</a>
-        <a href="tel:0702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
-      </div>
-      <div class="hero-trust">
-        <span><i>🕕</i> Open 6am – 7pm</span>
-        <span><i>🔒</i> Secure facility</span>
-        <span><i>💳</i> M-Pesa & cash accepted</span>
-      </div>
-    </div>
-  </section>
+  <main id="main">
 
-  <!-- Pricing Table -->
-  <section class="section section-light">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our services & prices</h2>
-        <p>Prices are for standard sedans and SUVs. WhatsApp us for exact quotes on larger vehicles or special requests.</p>
+    <section class="hero">
+      <img class="hero-bg" alt=""
+        src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=75"
+        srcset="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=640&q=70 640w,
+                https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=75 1200w,
+                https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1800&q=75 1800w"
+        sizes="100vw" width="1800" height="1200" fetchpriority="high" decoding="async">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <span class="eyebrow">PRICING</span>
+        <h1 class="hero-reveal">Clear, fair, no surprises.</h1>
+        <p>No hidden charges. You pay only after you approve the final result. We believe in transparent pricing — you see exactly what you pay for before we start.</p>
+        <div class="hero-cta">
+          <a href="book.html" class="btn btn-whatsapp">Book a service</a>
+          <a href="tel:+254702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
+        </div>
+        <ul class="hero-trust">
+          <li><i aria-hidden="true">🕕</i> Open 6am – 7pm</li>
+          <li><i aria-hidden="true">🔒</i> Secure facility</li>
+          <li><i aria-hidden="true">💳</i> M-Pesa &amp; cash accepted</li>
+        </ul>
       </div>
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>Service</th>
-              <th>Price (from)</th>
-              <th>Duration</th>
-              <th>Best for</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Express Shine</td><td>KSh 500</td><td>30–45 min</td><td>Quick exterior clean</td></tr>
-            <tr><td>Interior Revival</td><td>KSh 1,200</td><td>~90 min</td><td>Families, daily drivers</td></tr>
-            <tr><td>Signature Detail</td><td>KSh 2,500</td><td>~3 hrs</td><td>Showroom‑level finish</td></tr>
-            <tr><td>Ceramic Coating</td><td>KSh 3,000</td><td>1 day (quote)</td><td>Long‑term paint protection</td></tr>
-            <tr><td>Engine Bay Cleaning</td><td>KSh 800</td><td>~45 min</td><td>Clean, protected engine</td></tr>
-            <tr><td>Leather Care</td><td>KSh 1,000</td><td>~60 min</td><td>Leather conditioning & UV protection</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div style="text-align:center; margin-top:2rem;">
-        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27m%20not%20sure%20which%20service%20my%20car%20needs." class="btn btn-outline">Not sure? WhatsApp us</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Comparison Table (core services) -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Compare our core services</h2>
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our services &amp; prices</h2>
+          <p>Prices are for standard sedans and SUVs. Use our booking flow for exact quotes on larger vehicles.</p>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Price (from)</th>
+                <th>Duration</th>
+                <th>Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Express Shine</td><td>KSh 500</td><td>30–45 min</td><td>Quick exterior clean</td></tr>
+              <tr><td>Interior Revival</td><td>KSh 1,200</td><td>~90 min</td><td>Families, daily drivers</td></tr>
+              <tr><td>Signature Detail</td><td>KSh 2,500</td><td>~3 hrs</td><td>Showroom-level finish</td></tr>
+              <tr><td>Ceramic Coating</td><td>KSh 3,000</td><td>1 day (quote)</td><td>Long-term paint protection</td></tr>
+              <tr><td>Engine Bay Cleaning</td><td>KSh 800</td><td>~45 min</td><td>Clean, protected engine</td></tr>
+              <tr><td>Leather Care</td><td>KSh 1,000</td><td>~60 min</td><td>Leather conditioning &amp; UV protection</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center mt-2">
+          <a href="book.html" class="btn btn-whatsapp">Build your quote</a>
+        </div>
       </div>
-      <div class="table-responsive">
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Express Shine</th>
-              <th>Interior Revival</th>
-              <th>Signature Detail</th>
-              <th>Ceramic Coating</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Exterior hand wash</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Interior vacuum</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Dashboard & trim clean</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Seat shampoo</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Clay bar treatment</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Wax / sealant</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Paint correction</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
-            <tr><td>Ceramic protection</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
-            <tr><td>Duration</td><td>30–45 min</td><td>90 min</td><td>3 hrs</td><td>1 day</td></tr>
-            <tr><td>Price from</td><td>KSh 500</td><td>KSh 1,200</td><td>KSh 2,500</td><td>KSh 3,000</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Add-Ons -->
-  <section class="section section-light">
-    <div class="container">
-      <div class="section-title">
-        <h2>Add a little extra</h2>
-        <p>Available with any service — just mention them when you book.</p>
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Compare our core services</h2>
+          <p>Everything side by side, so you can choose with confidence.</p>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Express Shine</th>
+                <th>Interior Revival</th>
+                <th>Signature Detail</th>
+                <th>Ceramic Coating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Exterior hand wash</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Interior vacuum</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Dashboard &amp; trim clean</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Seat shampoo</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Clay bar treatment</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Wax / sealant</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Paint correction</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+              <tr><td>Ceramic protection</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+              <tr><td>Duration</td><td>30–45 min</td><td>90 min</td><td>3 hrs</td><td>1 day</td></tr>
+              <tr><td>Price from</td><td>KSh 500</td><td>KSh 1,200</td><td>KSh 2,500</td><td>KSh 3,000</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="features-grid">
-        <div class="feature-item">Air Freshener — KSh 100</div>
-        <div class="feature-item">Tyre Shine Refresh — KSh 150</div>
-        <div class="feature-item">Headlight Polish — KSh 500</div>
-        <div class="feature-item">Odour Removal — KSh 600</div>
-        <div class="feature-item">Clay Bar Treatment — KSh 800</div>
-        <div class="feature-item">Trim Restoration — KSh 500</div>
-        <div class="feature-item">Carpet Shampoo (full) — KSh 800</div>
-      </div>
-      <div style="text-align:center; margin-top:2rem;">
-        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20add%20extras%20to%20my%20booking." class="btn btn-primary">Ask About Add-Ons</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Fleet Section -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-title">
-        <h2>Fleet packages for businesses</h2>
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Add a little extra</h2>
+          <p>Available with any service — just mention them when you book.</p>
+        </div>
+        <div class="addons-grid">
+          <div class="addon-item">Air Freshener <strong>KSh 100</strong></div>
+          <div class="addon-item">Tyre Shine Refresh <strong>KSh 150</strong></div>
+          <div class="addon-item">Headlight Polish <strong>KSh 500</strong></div>
+          <div class="addon-item">Odour Removal <strong>KSh 600</strong></div>
+          <div class="addon-item">Clay Bar Treatment <strong>KSh 800</strong></div>
+          <div class="addon-item">Trim Restoration <strong>KSh 500</strong></div>
+          <div class="addon-item">Carpet Shampoo (full) <strong>KSh 800</strong></div>
+        </div>
+        <div class="text-center mt-2">
+          <a href="book.html" class="btn btn-whatsapp">Add to your booking</a>
+        </div>
       </div>
-      <p style="color:var(--color-silver);">We take care of company cars, NGO fleets, school vans, and taxi fleets across Donholm, Fedha, Tassia, Taj Mall, and Tel Aviv. Weekly, bi‑weekly, or monthly plans with simple reporting and priority booking.</p>
-      <div style="text-align:center; margin-top:2rem;">
-        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20a%20fleet%20quote.%20Number%20of%20cars%3A%20____%2C%20Schedule%3A%20____." class="btn btn-whatsapp">Request Fleet Quote</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Final CTA -->
-  <section class="section">
-    <div class="container text-center">
-      <h2>Ready to book?</h2>
-      <p>Choose your service and we'll get you scheduled. Same‑day slots often available.</p>
-      <div class="hero-cta" style="justify-content:center;">
-        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service." class="btn btn-whatsapp">Book Your Wash — WhatsApp Us</a>
-        <a href="tel:0702555093" class="btn btn-outline">Call 0702 555 093</a>
+    <section class="section section-dark">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fleet packages for businesses</h2>
+        </div>
+        <p class="text-center" style="max-width:720px;margin:0 auto 2rem;">We take care of company cars, NGO fleets, school vans, and taxi fleets across Donholm, Fedha, Tassia, Taj Mall, and Tel Aviv. Weekly, bi-weekly, or monthly plans with simple reporting and priority booking.</p>
+        <div class="text-center">
+          <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20a%20fleet%20quote.%20Number%20of%20cars%3A%20____%2C%20Schedule%3A%20____." class="btn btn-whatsapp">Request Fleet Quote</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section">
+      <div class="container text-center">
+        <h2>Ready to book?</h2>
+        <p>Choose your service and we'll get you scheduled. Same-day slots often available.</p>
+        <div class="hero-cta" style="justify-content:center;">
+          <a href="book.html" class="btn btn-whatsapp">Book a service</a>
+          <a href="tel:+254702555093" class="btn btn-outline">Call 0702 555 093</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><h4>CHROME</h4><p>Premium car wash & detailing in Donholm, Nairobi.</p></div>
-        <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
-        <div><h4>Contact</h4><a href="tel:0702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
+        <div><h4>CHROME</h4><p>Premium car wash &amp; detailing in Donholm, Nairobi.</p></div>
+        <div><h4>Site</h4><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact</h4><a href="tel:+254702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
         <div><h4>Hours</h4><p>Mon–Sun: 6:00 AM – 7:00 PM</p><p>Payment: M-Pesa · Cash</p></div>
       </div>
-      <div class="footer-bottom">© <span id="current-year"></span> CHROME. All rights reserved.</div>
+      <div class="footer-meta">
+        <span class="footer-meta-label">Project</span>
+        <a href="case-study.html">Case study</a>
+        <a href="styleguide.html">Style guide</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
+        <p class="footer-note">Concept project — brand and content created for portfolio purposes.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button (hidden on desktop) -->
-  <a href="https://wa.me/254702555093" class="floating-whatsapp pulse" aria-label="WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.766-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a href="https://wa.me/254702555093" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
   </a>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M18 15l-6-6-6 6"/>
-    </svg>
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
   <script src="script.js"></script>

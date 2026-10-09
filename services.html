@@ -1,351 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services — CHROME Premium Car Wash & Detailing in Donholm</title>
-    <meta name="description" content="Explore CHROME's detailed car wash and detailing services. Express hand wash, interior deep clean, full detailing, ceramic coating, engine bay, leather care, and fleet packages. Book via WhatsApp 0702 555 093.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Our Services — CHROME Premium Car Wash & Detailing in Donholm</title>
+  <meta name="description" content="Explore CHROME's detailed car wash and detailing services. Express hand wash, interior deep clean, full detailing, ceramic coating, engine bay, leather care, and fleet packages. Book via WhatsApp 0702 555 093.">
+  <meta name="theme-color" content="#0F1115">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHROME Car Wash & Detailing">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:title" content="Our Services — CHROME Premium Car Wash & Detailing">
+  <meta property="og:description" content="Express hand wash, interior deep clean, full detailing, ceramic coating, engine bay, and leather care. Transparent pricing, no surprises.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&h=630&q=75">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://chrome-carwash.example/services.html">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Services — CHROME Premium Car Wash & Detailing">
+  <meta name="twitter:description" content="Express hand wash, interior deep clean, full detailing, ceramic coating. Book via WhatsApp 0702 555 093.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&h=630&q=75">
+
+  <!-- Canonical & PWA -->
+  <link rel="canonical" href="https://chrome-carwash.example/services.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://wa.me">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        Same-day slots available in Donholm. <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.
-    </div>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container" aria-label="Main navigation">
-            <a href="index.html" class="logo">CHROME</a>
-            <ul class="nav-menu">
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-cta">
-                <a href="https://wa.me/254702555093" class="btn btn-whatsapp">WhatsApp Us</a>
-                <a href="tel:0702555093" class="phone-link">Call 0702 555 093</a>
-            </div>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-    </header>
+  <div class="announcement-bar" id="announcement-bar">
+    Same-day slots available in Donholm.
+    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
+  </div>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
-            <div class="container">
-                <span class="eyebrow">OUR SERVICES</span>
-                <h1>Premium care for every inch of your car</h1>
-                <p>From a quick refresh to a full showroom finish, we provide meticulously detailed services designed to protect your investment and enhance your driving experience.</p>
-                <div class="hero-cta">
-                    <a href="https://wa.me/254702555093" class="btn btn-primary">Book a Service</a>
-                    <a href="#service-table" class="btn btn-outline btn-light">Compare Services</a>
-                </div>
-                <div class="hero-trust">
-                    <span><i>🕕</i> Same-day slots often available</span>
-                    <span><i>🔒</i> Secure facility</span>
-                    <span><i>💳</i> Pay after approval</span>
-                </div>
-            </div>
-        </section>
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-menu-cta"><a href="book.html" class="btn btn-whatsapp">Book a service</a></li>
+        <li class="nav-menu-cta"><a href="tel:+254702555093" class="phone-link">Call 0702 555 093</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
+        </button>
+        <a href="tel:+254702555093" class="nav-icon-btn" aria-label="Call 0702 555 093">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="https://wa.me/254702555093" class="nav-icon-btn nav-icon-btn-wa" aria-label="WhatsApp us">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+        </a>
+        <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
+        <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-        <!-- Quick Comparison Table -->
-        <section class="section section-light" id="service-table">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Find your service at a glance</h2>
-                    <p>Transparent pricing, no surprises. Below is a quick overview.</p>
-                </div>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Service</th>
-                                <th>From Price</th>
-                                <th>Duration</th>
-                                <th>Best for</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Express Shine</td><td>KSh 500</td><td>30–45 min</td><td>Quick exterior clean</td></tr>
-                            <tr><td>Interior Revival</td><td>KSh 1,200</td><td>~90 min</td><td>Deep clean & odour removal</td></tr>
-                            <tr><td>Signature Detail</td><td>KSh 2,500</td><td>~3 hrs</td><td>Full inside-out showroom finish</td></tr>
-                            <tr><td>Ceramic Coating</td><td>KSh 3,000</td><td>1 day</td><td>Long-term paint protection</td></tr>
-                            <tr><td>Engine Bay Cleaning</td><td>KSh 800</td><td>~45 min</td><td>Engine care & maintenance</td></tr>
-                            <tr><td>Leather Care</td><td>KSh 1,000</td><td>~60 min</td><td>Leather conditioning & UV protection</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+  <main id="main">
 
-        <!-- Detailed Service Sections -->
-        <section class="section" aria-label="Detailed service descriptions">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Every service, explained</h2>
-                    <p>We don't rush, and we don't cut corners. Here's what each service includes.</p>
-                </div>
-
-                <!-- Express Shine -->
-                <article class="service-detail" id="express-shine">
-                    <div class="service-detail-content">
-                        <h3><span class="icon">🚿</span> Express Shine</h3>
-                        <p>Our signature quick wash for busy professionals. Your car gets a thorough hand wash using the two-bucket method, followed by a microfibre dry and tyre shine. We also vacuum the interior and clean the windows.</p>
-                        <ul>
-                            <li>Two-bucket hand wash – prevents swirl marks</li>
-                            <li>Microfibre towel drying – no water spots</li>
-                            <li>Interior vacuum & window cleaning</li>
-                            <li>Tyre shine for that fresh look</li>
-                        </ul>
-                        <p><strong>Ideal for:</strong> regular maintenance, pre-meeting, or post-weekend clean-up.</p>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Express%20Shine." class="btn btn-primary">Book Express Shine</a>
-                    </div>
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=600&q=80" alt="Express hand wash" loading="lazy" width="600" height="400">
-                    </div>
-                </article>
-
-                <!-- Interior Revival -->
-                <article class="service-detail" id="interior-revival">
-                    <div class="service-detail-content">
-                        <h3><span class="icon">🧽</span> Interior Revival</h3>
-                        <p>Go beyond the surface. We deep clean every corner of your car's cabin – seats, carpets, dashboard, door panels, and headliner. We remove stains, eliminate odours, and apply UV protection to keep your interior looking new.</p>
-                        <ul>
-                            <li>Hot water extraction for carpets & seats</li>
-                            <li>Steam cleaning for hard surfaces</li>
-                            <li>Odour neutralisation (not just masking)</li>
-                            <li>UV protection on dashboard & trim</li>
-                        </ul>
-                        <p><strong>Perfect for:</strong> families with kids, pet owners, or anyone who wants a fresh-smelling cabin.</p>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Interior%20Revival." class="btn btn-primary">Book Interior Revival</a>
-                    </div>
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1601739241761-d2a3941f5a0b?auto=format&fit=crop&w=600&q=80" alt="Interior deep clean" loading="lazy" width="600" height="400">
-                    </div>
-                </article>
-
-                <!-- Signature Detail -->
-                <article class="service-detail" id="signature-detail">
-                    <div class="service-detail-content">
-                        <h3><span class="icon">✨</span> Signature Detail</h3>
-                        <p>Our most comprehensive service. This is a complete inside‑out transformation. We start with a deep clean of the exterior, follow with clay bar treatment to remove bonded contaminants, and finish with a high‑quality carnauba wax. Inside, we perform a full interior detail.</p>
-                        <ul>
-                            <li>Exterior: hand wash, clay bar, machine polish (optional)</li>
-                            <li>Sealant or carnauba wax for gloss & protection</li>
-                            <li>Full interior deep clean + leather or fabric conditioning</li>
-                            <li>Trim restoration & wheel deep clean</li>
-                        </ul>
-                        <p><strong>Best for:</strong> enthusiasts, pre‑sale preparation, or special occasions.</p>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Signature%20Detail." class="btn btn-primary">Book Signature Detail</a>
-                    </div>
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Full detailing" loading="lazy" width="600" height="400">
-                    </div>
-                </article>
-
-                <!-- Ceramic Coating -->
-                <article class="service-detail" id="ceramic-coating">
-                    <div class="service-detail-content">
-                        <h3><span class="icon">🛡️</span> Ceramic Coating</h3>
-                        <p>Long-lasting paint protection that makes washing easier and keeps your car glossy for years. We decontaminate the paint, apply a professional ceramic coating (9H hardness), and provide after-care guidance.</p>
-                        <ul>
-                            <li>Paint decontamination & light polish</li>
-                            <li>Professional application of high‑grade ceramic</li>
-                            <li>Hydrophobic effect – water and dirt slide off</li>
-                            <li>UV and chemical resistance</li>
-                        </ul>
-                        <p><strong>Ideal for:</strong> new cars, premium paint, or anyone who hates washing often.</p>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20a%20quote%20for%20Ceramic%20Coating." class="btn btn-primary">Request Quote</a>
-                    </div>
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=600&q=80" alt="Ceramic coating application" loading="lazy" width="600" height="400">
-                    </div>
-                </article>
-
-                <!-- Engine Bay Cleaning -->
-                <article class="service-detail" id="engine-bay">
-                    <div class="service-detail-content">
-                        <h3><span class="icon">⚙️</span> Engine Bay Cleaning</h3>
-                        <p>We carefully degrease and clean the engine bay without using high‑pressure water that can damage electronics. The result is a clean, professional‑looking engine that's easier to inspect and maintain.</p>
-                        <ul>
-                            <li>Gentle degreasing with safe products</li>
-                            <li>Careful rinsing & drying</li>
-                            <li>Dressing on plastic and rubber parts</li>
-                            <li>Protects against corrosion</li>
-                        </ul>
-                        <p><strong>Great for:</strong> used car preparation, pre‑sale inspections, or peace of mind.</p>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Engine%20Bay%20Cleaning." class="btn btn-primary">Book Engine Bay Cleaning</a>
-                    </div>
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=600&q=80" alt="Engine bay cleaning" loading="lazy" width="600" height="400">
-                    </div>
-                </article>
-
-                <!-- Leather Care -->
-                <article class="service-detail" id="leather-care">
-                    <div class="service-detail-content">
-                        <h3><span class="icon">🪑</span> Leather Care</h3>
-                        <p>Leather is a luxury material that needs specific care. We clean, condition, and protect your leather seats and interior surfaces to keep them soft, supple, and free from cracks.</p>
-                        <ul>
-                            <li>Leather‑specific cleaning – lifts dirt without damage</li>
-                            <li>Conditioning to restore natural oils</li>
-                            <li>UV protection to prevent cracking & fading</li>
-                            <li>Final buff for a soft sheen</li>
-                        </ul>
-                        <p><strong>Perfect for:</strong> premium vehicles, older leather that needs revival, or regular upkeep.</p>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Leather%20Care." class="btn btn-primary">Book Leather Care</a>
-                    </div>
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=80" alt="Leather care" loading="lazy" width="600" height="400">
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Add-Ons Section -->
-        <section class="section section-dark" aria-labelledby="addons-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="addons-heading">Add‑ons to enhance your service</h2>
-                    <p>Available with any package – just mention when booking.</p>
-                </div>
-                <div class="addons-grid">
-                    <div class="addon-item">Air Freshener — KSh 100</div>
-                    <div class="addon-item">Tyre Shine Refresh — KSh 150</div>
-                    <div class="addon-item">Headlight Polish — KSh 500</div>
-                    <div class="addon-item">Odour Removal — KSh 600</div>
-                    <div class="addon-item">Clay Bar Treatment — KSh 800</div>
-                    <div class="addon-item">Trim Restoration — KSh 500</div>
-                    <div class="addon-item">Carpet Shampoo (full) — KSh 800</div>
-                    <div class="addon-item">Machine Polish (1‑step) — KSh 1,500</div>
-                </div>
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20add%20extras%20to%20my%20service." class="btn btn-whatsapp">Ask About Add‑Ons</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Fleet & Corporate -->
-        <section class="section" id="fleet">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Fleet & corporate packages</h2>
-                    <p>Keep your company vehicles spotless and professional. We offer tailored weekly, bi‑weekly, and monthly plans with priority scheduling and invoicing.</p>
-                </div>
-                <div class="fleet-benefits">
-                    <div class="benefit">
-                        <h3>🚐 For fleets of 5+ cars</h3>
-                        <p>Discounted rates, dedicated team, and flexible scheduling to minimise downtime.</p>
-                    </div>
-                    <div class="benefit">
-                        <h3>📊 Simple reporting</h3>
-                        <p>Detailed service records and invoices for your accounts department.</p>
-                    </div>
-                    <div class="benefit">
-                        <h3>⏱️ Priority booking</h3>
-                        <p>Your vehicles get first slot availability every day.</p>
-                    </div>
-                </div>
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20a%20fleet%20quote.%20Number%20of%20vehicles%3A%20____" class="btn btn-primary">Request Fleet Quote</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service FAQ -->
-        <section class="section section-light" aria-labelledby="service-faq-heading">
-            <div class="container">
-                <div class="section-title">
-                    <h2 id="service-faq-heading">Service‑related questions</h2>
-                </div>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question">Can I combine services?</button>
-                        <div class="faq-answer"><p>Absolutely. Many customers combine an exterior wash with an interior deep clean or add ceramic coating to a detail. WhatsApp us and we'll create a package for you.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">How often should I get a full detail?</button>
-                        <div class="faq-answer"><p>For daily drivers, every 3–4 months is recommended. Ceramic coating reduces the need – typically once a year for maintenance.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Do you use waterless methods?</button>
-                        <div class="faq-answer"><p>We use a two‑bucket hand wash with plenty of water for the safest clean. Waterless methods are only used for light dust removal when requested.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Is ceramic coating worth it?</button>
-                        <div class="faq-answer"><p>If you care about long‑term paint protection and ease of washing, yes. It reduces swirl marks and keeps the car cleaner for longer.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="section section-dark">
-            <div class="container text-center">
-                <h2>Ready to experience the CHROME standard?</h2>
-                <p>Book any of our services via WhatsApp and we'll confirm within 5 minutes.</p>
-                <div class="hero-cta" style="justify-content:center;">
-                    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service." class="btn btn-whatsapp">Book Your Wash — WhatsApp Us</a>
-                    <a href="tel:0702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4>CHROME</h4>
-                    <p>Premium car wash & detailing in Donholm, Nairobi.</p>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="about.html">About</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="reviews.html">Reviews</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div>
-                    <h4>Contact</h4>
-                    <a href="tel:0702555093">Phone: 0702 555 093</a>
-                    <a href="https://wa.me/254702555093">WhatsApp</a>
-                </div>
-                <div>
-                    <h4>Hours</h4>
-                    <p>Mon–Sun: 6:00 AM – 7:00 PM</p>
-                    <p>Payment: M-Pesa · Cash</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                © <span id="current-year"></span> CHROME. All rights reserved.
-            </div>
+    <section class="hero">
+      <img class="hero-bg" alt=""
+        src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=75"
+        srcset="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=640&q=70 640w,
+                https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=75 1200w,
+                https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1800&q=75 1800w"
+        sizes="100vw" width="1800" height="1200" fetchpriority="high" decoding="async">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <span class="eyebrow">OUR SERVICES</span>
+        <h1 class="hero-reveal">Premium care for every inch of your car</h1>
+        <p>From a quick refresh to a full showroom finish, we provide meticulously detailed services designed to protect your investment and enhance your driving experience.</p>
+        <div class="hero-cta">
+          <a href="book.html" class="btn btn-whatsapp">Book a service</a>
+          <a href="#service-table" class="btn btn-outline btn-light">Compare Services</a>
         </div>
-    </footer>
+        <ul class="hero-trust">
+          <li><i aria-hidden="true">🕕</i> Same-day slots often available</li>
+          <li><i aria-hidden="true">🔒</i> Secure facility</li>
+          <li><i aria-hidden="true">💳</i> Pay after approval</li>
+        </ul>
+      </div>
+    </section>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/254702555093" class="floating-whatsapp pulse" aria-label="WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.766-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
+    <section class="section section-light" id="service-table">
+      <div class="container">
+        <div class="section-title">
+          <h2>Find your service at a glance</h2>
+          <p>Transparent pricing, no surprises. Below is a quick overview.</p>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>From Price</th>
+                <th>Duration</th>
+                <th>Best for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Express Shine</td><td>KSh 500</td><td>30–45 min</td><td>Quick exterior clean</td></tr>
+              <tr><td>Interior Revival</td><td>KSh 1,200</td><td>~90 min</td><td>Deep clean &amp; odour removal</td></tr>
+              <tr><td>Signature Detail</td><td>KSh 2,500</td><td>~3 hrs</td><td>Full inside-out showroom finish</td></tr>
+              <tr><td>Ceramic Coating</td><td>KSh 3,000</td><td>1 day</td><td>Long-term paint protection</td></tr>
+              <tr><td>Engine Bay Cleaning</td><td>KSh 800</td><td>~45 min</td><td>Engine care &amp; maintenance</td></tr>
+              <tr><td>Leather Care</td><td>KSh 1,000</td><td>~60 min</td><td>Leather conditioning &amp; UV protection</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-    <!-- Back to Top -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
-    </button>
+    <section class="section" aria-label="Detailed service descriptions">
+      <div class="container">
+        <div class="section-title">
+          <h2>Every service, explained</h2>
+          <p>We don't rush, and we don't cut corners. Here's what each service includes.</p>
+        </div>
 
-    <script src="script.js"></script>
+        <article class="service-detail" id="express-shine">
+          <div class="service-detail-content">
+            <h3><span class="icon" aria-hidden="true">🚿</span> Express Shine</h3>
+            <p>Our signature quick wash for busy professionals. Your car gets a thorough hand wash using the two-bucket method, followed by a microfibre dry and tyre shine. We also vacuum the interior and clean the windows.</p>
+            <ul>
+              <li>Two-bucket hand wash – prevents swirl marks</li>
+              <li>Microfibre towel drying – no water spots</li>
+              <li>Interior vacuum &amp; window cleaning</li>
+              <li>Tyre shine for that fresh look</li>
+            </ul>
+            <p><strong>Ideal for:</strong> regular maintenance, pre-meeting, or post-weekend clean-up.</p>
+            <a href="book.html" class="btn btn-whatsapp">Book Express Shine</a>
+          </div>
+          <div class="service-detail-image">
+            <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 767px) 100vw, 45vw"
+              alt="Hand washing a car with a pressure spray" width="800" height="534" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <article class="service-detail" id="interior-revival">
+          <div class="service-detail-content">
+            <h3><span class="icon" aria-hidden="true">🧽</span> Interior Revival</h3>
+            <p>Go beyond the surface. We deep clean every corner of your car's cabin – seats, carpets, dashboard, door panels, and headliner. We remove stains, eliminate odours, and apply UV protection to keep your interior looking new.</p>
+            <ul>
+              <li>Hot water extraction for carpets &amp; seats</li>
+              <li>Steam cleaning for hard surfaces</li>
+              <li>Odour neutralisation (not just masking)</li>
+              <li>UV protection on dashboard &amp; trim</li>
+            </ul>
+            <p><strong>Perfect for:</strong> families with kids, pet owners, or anyone who wants a fresh-smelling cabin.</p>
+            <a href="book.html" class="btn btn-whatsapp">Book Interior Revival</a>
+          </div>
+          <div class="service-detail-image">
+            <img src="https://images.unsplash.com/photo-1601739241761-d2a3941f5a0b?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1601739241761-d2a3941f5a0b?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1601739241761-d2a3941f5a0b?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 767px) 100vw, 45vw"
+              alt="Clean modern car interior after deep cleaning" width="800" height="534" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <article class="service-detail" id="signature-detail">
+          <div class="service-detail-content">
+            <h3><span class="icon" aria-hidden="true">✨</span> Signature Detail</h3>
+            <p>Our most comprehensive service. This is a complete inside-out transformation. We start with a deep clean of the exterior, follow with clay bar treatment to remove bonded contaminants, and finish with a high-quality carnauba wax. Inside, we perform a full interior detail.</p>
+            <ul>
+              <li>Exterior: hand wash, clay bar, machine polish (optional)</li>
+              <li>Sealant or carnauba wax for gloss &amp; protection</li>
+              <li>Full interior deep clean + leather or fabric conditioning</li>
+              <li>Trim restoration &amp; wheel deep clean</li>
+            </ul>
+            <p><strong>Best for:</strong> enthusiasts, pre-sale preparation, or special occasions.</p>
+            <a href="book.html" class="btn btn-whatsapp">Book Signature Detail</a>
+          </div>
+          <div class="service-detail-image">
+            <img src="https://images.unsplash.com/photo-1605164599901-ffc2b6a65f25?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1605164599901-ffc2b6a65f25?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1605164599901-ffc2b6a65f25?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 767px) 100vw, 45vw"
+              alt="Detailed polishing work on a car exterior" width="800" height="534" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <article class="service-detail" id="ceramic-coating">
+          <div class="service-detail-content">
+            <h3><span class="icon" aria-hidden="true">🛡️</span> Ceramic Coating</h3>
+            <p>Long-lasting paint protection that makes washing easier and keeps your car glossy for years. We decontaminate the paint, apply a professional ceramic coating (9H hardness), and provide after-care guidance.</p>
+            <ul>
+              <li>Paint decontamination &amp; light polish</li>
+              <li>Professional application of high-grade ceramic</li>
+              <li>Hydrophobic effect – water and dirt slide off</li>
+              <li>UV and chemical resistance</li>
+            </ul>
+            <p><strong>Ideal for:</strong> new cars, premium paint, or anyone who hates washing often.</p>
+            <a href="book.html" class="btn btn-whatsapp">Request Quote</a>
+          </div>
+          <div class="service-detail-image">
+            <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 767px) 100vw, 45vw"
+              alt="Applying protective coating to car paint" width="800" height="534" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <article class="service-detail" id="engine-bay">
+          <div class="service-detail-content">
+            <h3><span class="icon" aria-hidden="true">⚙️</span> Engine Bay Cleaning</h3>
+            <p>We carefully degrease and clean the engine bay without using high-pressure water that can damage electronics. The result is a clean, professional-looking engine that's easier to inspect and maintain.</p>
+            <ul>
+              <li>Gentle degreasing with safe products</li>
+              <li>Careful rinsing &amp; drying</li>
+              <li>Dressing on plastic and rubber parts</li>
+              <li>Protects against corrosion</li>
+            </ul>
+            <p><strong>Great for:</strong> used car preparation, pre-sale inspections, or peace of mind.</p>
+            <a href="book.html" class="btn btn-whatsapp">Book Engine Bay Cleaning</a>
+          </div>
+          <div class="service-detail-image">
+            <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 767px) 100vw, 45vw"
+              alt="Clean car engine bay after detailing" width="800" height="534" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <article class="service-detail" id="leather-care">
+          <div class="service-detail-content">
+            <h3><span class="icon" aria-hidden="true">🪑</span> Leather Care</h3>
+            <p>Leather is a luxury material that needs specific care. We clean, condition, and protect your leather seats and interior surfaces to keep them soft, supple, and free from cracks.</p>
+            <ul>
+              <li>Leather-specific cleaning – lifts dirt without damage</li>
+              <li>Conditioning to restore natural oils</li>
+              <li>UV protection to prevent cracking &amp; fading</li>
+              <li>Final buff for a soft sheen</li>
+            </ul>
+            <p><strong>Perfect for:</strong> premium vehicles, older leather that needs revival, or regular upkeep.</p>
+            <a href="book.html" class="btn btn-whatsapp">Book Leather Care</a>
+          </div>
+          <div class="service-detail-image">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 767px) 100vw, 45vw"
+              alt="Conditioned leather car seat" width="800" height="534" loading="lazy" decoding="async">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-dark" aria-labelledby="addons-heading">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="addons-heading">Add-ons to enhance your service</h2>
+          <p>Available with any package – just mention when booking.</p>
+        </div>
+        <div class="addons-grid">
+          <div class="addon-item">Air Freshener <strong>KSh 100</strong></div>
+          <div class="addon-item">Tyre Shine Refresh <strong>KSh 150</strong></div>
+          <div class="addon-item">Headlight Polish <strong>KSh 500</strong></div>
+          <div class="addon-item">Odour Removal <strong>KSh 600</strong></div>
+          <div class="addon-item">Clay Bar Treatment <strong>KSh 800</strong></div>
+          <div class="addon-item">Trim Restoration <strong>KSh 500</strong></div>
+          <div class="addon-item">Carpet Shampoo (full) <strong>KSh 800</strong></div>
+          <div class="addon-item">Machine Polish (1-step) <strong>KSh 1,500</strong></div>
+        </div>
+        <div class="text-center mt-2">
+          <a href="book.html" class="btn btn-whatsapp">Book with Add-Ons</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fleet &amp; corporate packages</h2>
+          <p>Keep your company vehicles spotless and professional. We offer tailored weekly, bi-weekly, and monthly plans with priority scheduling and invoicing.</p>
+        </div>
+        <div class="fleet-benefits">
+          <div class="benefit">
+            <h3>🚐 For fleets of 5+ cars</h3>
+            <p>Discounted rates, dedicated team, and flexible scheduling to minimise downtime.</p>
+          </div>
+          <div class="benefit">
+            <h3>📊 Simple reporting</h3>
+            <p>Detailed service records and invoices for your accounts department.</p>
+          </div>
+          <div class="benefit">
+            <h3>⏱️ Priority booking</h3>
+            <p>Your vehicles get first slot availability every day.</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20a%20fleet%20quote.%20Number%20of%20vehicles%3A%20____" class="btn btn-whatsapp">Request Fleet Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" aria-labelledby="service-faq-heading">
+      <div class="container">
+        <div class="section-title">
+          <h2 id="service-faq-heading">Service-related questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">Can I combine services?</button>
+            <div class="faq-answer"><p>Absolutely. Many customers combine an exterior wash with an interior deep clean or add ceramic coating to a detail. Use our booking flow or WhatsApp us and we'll create a package for you.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">How often should I get a full detail?</button>
+            <div class="faq-answer"><p>For daily drivers, every 3–4 months is recommended. Ceramic coating reduces the need – typically once a year for maintenance.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Do you use waterless methods?</button>
+            <div class="faq-answer"><p>We use a two-bucket hand wash with plenty of water for the safest clean. Waterless methods are only used for light dust removal when requested.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Is ceramic coating worth it?</button>
+            <div class="faq-answer"><p>If you care about long-term paint protection and ease of washing, yes. It reduces swirl marks and keeps the car cleaner for longer.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container text-center">
+        <h2>Ready to experience the CHROME standard?</h2>
+        <p>Book any of our services via WhatsApp and we'll confirm within 5 minutes.</p>
+        <div class="hero-cta" style="justify-content:center;">
+          <a href="book.html" class="btn btn-whatsapp">Book a service</a>
+          <a href="tel:+254702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>CHROME</h4><p>Premium car wash &amp; detailing in Donholm, Nairobi.</p></div>
+        <div><h4>Site</h4><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact</h4><a href="tel:+254702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
+        <div><h4>Hours</h4><p>Mon–Sun: 6:00 AM – 7:00 PM</p><p>Payment: M-Pesa · Cash</p></div>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-meta-label">Project</span>
+        <a href="case-study.html">Case study</a>
+        <a href="styleguide.html">Style guide</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
+        <p class="footer-note">Concept project — brand and content created for portfolio purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254702555093" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+  </a>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>

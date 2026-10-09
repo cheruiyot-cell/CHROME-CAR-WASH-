@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Case Study — CHROME Car Wash & Detailing</title>
+  <meta name="description" content="How and why CHROME was designed and built — a mobile-first, WhatsApp-led marketing site for a Nairobi car wash. Design decisions, technical choices, and outcomes.">
+  <meta name="theme-color" content="#0F1115">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CHROME Car Wash & Detailing">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:title" content="Case Study — CHROME Car Wash">
+  <meta property="og:description" content="How and why CHROME was designed — a mobile-first, WhatsApp-led site for a Nairobi car wash.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://chrome-carwash.example/case-study.html">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case Study — CHROME Car Wash">
+  <meta name="twitter:description" content="How and why CHROME was designed — a mobile-first, WhatsApp-led site for a Nairobi car wash.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+
+  <!-- Canonical & PWA -->
+  <link rel="canonical" href="https://chrome-carwash.example/case-study.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://wa.me">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="announcement-bar" id="announcement-bar">
+    Portfolio case study. <a href="index.html">See the live site</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
+  </div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-menu-cta"><a href="book.html" class="btn btn-whatsapp">Book a service</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
+        </button>
+        <a href="tel:+254702555093" class="nav-icon-btn" aria-label="Call 0702 555 093">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book</a>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="section section-light" style="padding-top:3.5rem;padding-bottom:2rem;">
+      <div class="container">
+        <div class="article">
+          <span class="eyebrow">CASE STUDY</span>
+          <h1 style="font-size:2.5rem;margin-bottom:0.75rem;">CHROME: a mobile-first, WhatsApp-led marketing site for a Nairobi car wash</h1>
+          <p class="lead" style="margin-bottom:2rem;">A portfolio project exploring how a small premium service business in Kenya can convert mobile traffic into bookings with a fast, accessible, WhatsApp-first site — no framework, no backend, no budget for custom photography.</p>
+
+          <div class="kpi-grid">
+            <div class="kpi"><span class="kpi-value">~10KB</span><span class="kpi-label">CSS gzipped</span></div>
+            <div class="kpi"><span class="kpi-value">~8KB</span><span class="kpi-label">JS gzipped</span></div>
+            <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Frameworks</span></div>
+            <div class="kpi"><span class="kpi-value">AA</span><span class="kpi-label">WCAG target</span></div>
+          </div>
+
+          <div class="toc">
+            <strong>Contents</strong>
+            <ol>
+              <li><a href="#brief">The brief</a></li>
+              <li><a href="#constraints">Constraints</a></li>
+              <li><a href="#research">Research &amp; insights</a></li>
+              <li><a href="#design">Design decisions</a></li>
+              <li><a href="#technical">Technical decisions</a></li>
+              <li><a href="#outcome">Outcome</a></li>
+              <li><a href="#next">What I'd do with a real budget</a></li>
+            </ol>
+          </div>
+
+          <h2 id="brief">1. The brief</h2>
+          <p>Design and build a premium-feeling website for a fictional car wash in Donholm, Nairobi. The goal: increase WhatsApp bookings from mobile users in Nairobi's Eastlands — Donholm, Fedha, Tassia, Taj Mall, Tel Aviv.</p>
+          <p>Success in this market is not "a beautiful website." It's <strong>a site that turns a mobile visitor into a WhatsApp message in under 60 seconds</strong>.</p>
+
+          <h2 id="constraints">2. Constraints</h2>
+          <ul>
+            <li><strong>Mobile-only reality.</strong> Most users will arrive on a mid-range Android over 4G — often metered. Every KB counts.</li>
+            <li><strong>WhatsApp is the channel.</strong> Kenyan SMEs do not book through email or web forms. WhatsApp is the primary business tool.</li>
+            <li><strong>M-Pesa is payment, not a channel.</strong> It happens after the service, in person. Designing for it is a UX non-goal.</li>
+            <li><strong>No brand assets.</strong> No logo, no photography, no color system. Everything had to be decided or borrowed from a design system.</li>
+            <li><strong>No backend.</strong> A static site, or nothing.</li>
+          </ul>
+
+          <h2 id="research">3. Research &amp; insights</h2>
+          <p>Three assumptions shaped every decision. These are drawn from observing how mid-market Kenyan service businesses actually convert.</p>
+
+          <h3>Insight 1 — Trust is the actual product</h3>
+          <p>Car owners' #1 fear is not price. It's <em>damage</em>. That's why the site repeatedly names "two-bucket hand wash", "pH-neutral products", and "no machine brushes" — the language of craft that signals safety. The testimonial column is not decoration; it is the conversion engine.</p>
+
+          <h3>Insight 2 — Speed-of-reply beats speed-of-page</h3>
+          <p>Users don't care if the site loads in 1s or 3s — they care if the WhatsApp reply comes in 5 minutes. The site promises this explicitly ("we'll confirm within 5 minutes") because it is a competitive advantage, not a feature.</p>
+
+          <h3>Insight 3 — Local language builds trust cheaply</h3>
+          <p>"Safi kabisa" and "Hapa ni kwenu. Karibu CHROME." are used sparingly, in high-trust moments (testimonials, closing CTAs). The rest of the site is English. Mixing registers deliberately signals: <em>we are professional, and we are yours</em>.</p>
+
+          <h2 id="design">4. Design decisions</h2>
+          <h3>Why graphite + gold</h3>
+          <p>The dark canvas gives the site a "premium studio" feel — a small visual claim to justify premium pricing in a category where most competitors look identical (yellow-and-blue). Gold is the accent — reserved for CTAs — and provides contrast without a red/orange "discount" signal.</p>
+
+          <h3>Why "Book" is "Book via WhatsApp"</h3>
+          <p>"Book Now" is a web-native phrase. It implies a form. In Kenya, booking is a conversation. Labelling the CTA "Book via WhatsApp" reduces the cognitive step from "click" to "chat" — the user already knows what happens.</p>
+
+          <h3>Why the page reads like a sales argument</h3>
+          <p>Most premium service sites start with a hero image and a brand promise. CHROME starts with the customer's pain: "You've been to car washes that scratch paint, miss spots, and make you wait 2 hours." The hero earns attention with a specific claim ("Your car, spotless in 45 minutes — without the stress"). Every section answers a real objection.</p>
+
+          <h3>Typography</h3>
+          <p>Fraunces (a "soft serif") signals craft and human quality. Manrope keeps the interface clean and legible on cheap Android screens. Two families only — no display-font stacking.</p>
+
+          <h3>Motion with restraint</h3>
+          <p>Hero title uses a staggered reveal (once, on load). Cards use scroll-triggered fades. Nothing autoplays, nothing parallaxes. The point is that <em>the site feels alive without being busy</em>. Everything degrades gracefully under <code>prefers-reduced-motion</code>.</p>
+
+          <h2 id="technical">5. Technical decisions</h2>
+
+          <h3>Vanilla HTML/CSS/JS — no framework</h3>
+          <p>A 10-page marketing site does not need React. Next.js would add 60–90KB of JS to ship what is essentially static HTML. Vanilla wins on every axis that matters here: initial load, time-to-interactive, hosting, maintainability, and hire-ability (it shows you can build without a scaffold).</p>
+
+          <h3>WhatsApp handoff instead of a form backend</h3>
+          <p>The contact form and the booking flow both encode their state into a pre-filled <code>wa.me</code> link. This gives the business a real inbox (WhatsApp Business) with no server, no spam mitigation, and a native mobile experience for the operator.</p>
+
+          <h3>Progressive Web App</h3>
+          <p>A service worker caches the app shell, so the site loads near-instantly on repeat visits — a meaningful advantage in a market where users return frequently to check hours or book again. An install prompt lets them pin CHROME to their home screen.</p>
+
+          <h3>View Transitions API</h3>
+          <p>Where supported, navigation between pages cross-fades with a subtle vertical motion. Zero JS, zero library. Progressive enhancement: no support, no problem.</p>
+
+          <h3>Accessibility as a gate, not a checkbox</h3>
+          <p>Contrast pairs (gold-on-dark, white-on-graphite) were checked before shipping. Every interactive element has a visible focus state. FAQ accordions use real <code>aria-expanded</code>. The mobile menu restores focus. Reduced motion is respected throughout.</p>
+
+          <h3>Images</h3>
+          <p>Hero images are preloaded with <code>fetchpriority="high"</code> and served as responsive <code>srcset</code> sets from Unsplash. Content images are lazy-loaded with fixed aspect ratios so they never shift layout. Placeholder photography is used deliberately — a real deployment would replace these with the studio's own work.</p>
+
+          <h2 id="outcome">6. Outcome</h2>
+          <p>Because CHROME is a fictional brand, I can't cite live conversion metrics. What I can cite are things I controlled: the technical and design qualities that a real deployment would build on.</p>
+          <div class="kpi-grid">
+            <div class="kpi"><span class="kpi-value">AA</span><span class="kpi-label">Contrast on every CTA</span></div>
+            <div class="kpi"><span class="kpi-value">100%</span><span class="kpi-label">Keyboard navigable</span></div>
+            <div class="kpi"><span class="kpi-value">~18KB</span><span class="kpi-label">CSS + JS total</span></div>
+            <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Render-blocking JS</span></div>
+          </div>
+          <div class="callout">
+            <strong>What I'd measure next, if this were live:</strong> WhatsApp click-through rate on mobile (target 8–12% from the homepage), install rate for the PWA, repeat-visit rate via "Book again" banner impressions, and the LCP on a throttled 3G connection.
+          </div>
+
+          <h2 id="next">7. What I'd do with a real budget</h2>
+          <ul>
+            <li><strong>Custom photography.</strong> Three hours of a photographer at the studio would outperform every stock image on this site.</li>
+            <li><strong>WhatsApp Business API.</strong> Automated confirmation replies and a live queue widget ("3 cars ahead of you").</li>
+            <li><strong>A CMS.</strong> Today the customer would have to call a developer to update prices. Astro or 11ty with a lightweight CMS would fix this.</li>
+            <li><strong>Bilingual EN/SW toggle.</strong> Deferred here to keep the piece focused, but the market clearly justifies it.</li>
+            <li><strong>Real analytics.</strong> Umami or Plausible, self-hosted, without third-party scripts or cookies.</li>
+          </ul>
+
+          <div class="callout">
+            <strong>Explore the build:</strong>
+            <a href="index.html">Live site</a> ·
+            <a href="book.html">Booking flow</a> ·
+            <a href="styleguide.html">Design system</a> ·
+            <a href="dashboard.html">Owner dashboard</a> ·
+            <a href="accessibility.html">Accessibility statement</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>CHROME</h4><p>Premium car wash &amp; detailing in Donholm, Nairobi.</p></div>
+        <div><h4>Site</h4><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact</h4><a href="tel:+254702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
+        <div><h4>Hours</h4><p>Mon–Sun: 6:00 AM – 7:00 PM</p><p>Payment: M-Pesa · Cash</p></div>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-meta-label">Project</span>
+        <a href="case-study.html">Case study</a>
+        <a href="styleguide.html">Style guide</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
+        <p class="footer-note">Concept project — brand and content created for portfolio purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

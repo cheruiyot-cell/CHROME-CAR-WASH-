@@ -1,546 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHROME — Premium Car Wash & Detailing in Donholm, Nairobi</title>
-    <meta name="description" content="CHROME is Nairobi Eastlands' premium car wash and detailing studio in Donholm. Hand washing, interior deep clean, ceramic coating. Book via WhatsApp or call 0702 555 093.">
-    <meta name="theme-color" content="#0F1115">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "AutoWash",
-            "name": "CHROME Car Wash & Detailing",
-            "description": "Premium car wash and detailing studio in Donholm, Nairobi.",
-            "telephone": "+254702555093",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Donholm",
-                "addressRegion": "Nairobi",
-                "addressCountry": "KE"
-            },
-            "openingHoursSpecification": [{
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "06:00",
-                "closes": "19:00"
-            }],
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "300"
-            },
-            "priceRange": "KSh 500 - KSh 3,000"
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CHROME — Premium Car Wash & Detailing in Donholm, Nairobi</title>
+  <meta name="description" content="CHROME is Nairobi Eastlands' premium car wash and detailing studio in Donholm. Hand washing, interior deep clean, ceramic coating. Book via WhatsApp or call 0702 555 093.">
+  <meta name="theme-color" content="#0F1115">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHROME Car Wash & Detailing">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:title" content="CHROME — Premium Car Wash & Detailing in Donholm">
+  <meta property="og:description" content="Nairobi Eastlands' premium car wash. Hand wash, interior deep clean, ceramic coating. Book via WhatsApp 0702 555 093.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://chrome-carwash.example/index.html">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CHROME — Premium Car Wash & Detailing in Donholm">
+  <meta name="twitter:description" content="Nairobi Eastlands' premium car wash. Book via WhatsApp 0702 555 093.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+
+  <!-- Canonical & PWA -->
+  <link rel="canonical" href="https://chrome-carwash.example/index.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://wa.me">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "CHROME Car Wash & Detailing",
+    "description": "Premium car wash and detailing studio in Donholm, Nairobi.",
+    "telephone": "+254702555093",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Donholm",
+      "addressRegion": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "06:00",
+      "closes": "19:00"
+    }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "300" },
+    "priceRange": "KSh 500 - KSh 3,000"
+  }
+  </script>
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- ========== Announcement Bar ========== -->
-    <div class="announcement-bar">
-        <p>Same-day slots available in Donholm. <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.</p>
-    </div>
+  <div class="announcement-bar" id="announcement-bar">
+    Same-day slots available in Donholm.
+    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
+  </div>
 
-    <!-- ========== Header & Navigation ========== -->
-    <header class="header">
-        <nav class="nav container" aria-label="Main navigation">
-            <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
 
-            <ul class="nav-menu">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-menu-cta"><a href="book.html" class="btn btn-whatsapp">Book a service</a></li>
+        <li class="nav-menu-cta"><a href="tel:+254702555093" class="phone-link">Call 0702 555 093</a></li>
+      </ul>
 
-            <div class="nav-cta">
-                <a href="https://wa.me/254702555093" class="btn btn-whatsapp" aria-label="Chat on WhatsApp">WhatsApp Us</a>
-                <a href="tel:0702555093" class="phone-link">Call 0702 555 093</a>
-            </div>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
+        </button>
+        <a href="tel:+254702555093" class="nav-icon-btn" aria-label="Call 0702 555 093">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="https://wa.me/254702555093" class="nav-icon-btn nav-icon-btn-wa" aria-label="WhatsApp us">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+        </a>
+        <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
+        <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-    </header>
+  <main id="main">
 
-    <main>
+    <section class="hero">
+      <img class="hero-bg" alt=""
+        src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=75"
+        srcset="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=640&q=70 640w,
+                https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=75 1200w,
+                https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1800&q=75 1800w"
+        sizes="100vw" width="1800" height="1200" fetchpriority="high" decoding="async">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <span class="eyebrow">NAIROBI EASTLANDS · PREMIUM CAR CARE</span>
+        <h1 class="hero-reveal">Your car, spotless in 45 minutes — without the stress.</h1>
+        <p>No scratches. No rushed work. No waiting around. We're the highest-rated car wash in Donholm, trusted by 2,500+ drivers.</p>
 
-        <!-- ========== Hero Section ========== -->
-        <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
-            <div class="container">
-                <span class="eyebrow">NAIROBI EASTLANDS · PREMIUM CAR CARE</span>
-                <h1>Your car, spotless in 45 minutes<br>— without the stress.</h1>
-                <p>No scratches. No rushed work. No waiting around. We're the highest-rated car wash in Donholm, trusted by 2,500+ drivers.</p>
-
-                <div class="hero-cta">
-                    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service." class="btn btn-primary">Book Your Wash — WhatsApp Us</a>
-                    <a href="tel:0702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
-                </div>
-
-                <ul class="hero-trust">
-                    <li><i aria-hidden="true">★</i> 4.9/5 Google rating (300+ reviews)</li>
-                    <li><i aria-hidden="true">🔒</i> CCTV-monitored facility</li>
-                    <li><i aria-hidden="true">🕕</i> Open 6am – 7pm</li>
-                    <li><i aria-hidden="true">💳</i> M-Pesa &amp; cash accepted</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- ========== Social Proof Strip ========== -->
-        <section class="social-proof" aria-label="Trust signals">
-            <div class="container">
-                <div class="social-proof-item"><span class="icon" aria-hidden="true">★</span> 4.9/5 (300+ Google Reviews)</div>
-                <div class="social-proof-item"><span class="icon" aria-hidden="true">🚗</span> 2,500+ Cars Safely Washed</div>
-                <div class="social-proof-item"><span class="icon" aria-hidden="true">📹</span> CCTV-Monitored, Fenced Facility</div>
-                <div class="social-proof-item"><span class="icon" aria-hidden="true">💳</span> M-Pesa · Cash · Invoicing for Companies</div>
-            </div>
-        </section>
-
-        <!-- ========== Problem Section ========== -->
-        <section class="section problem" aria-labelledby="problem-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">WHY WE EXIST</span>
-                    <h2 id="problem-heading">You've been to car washes that scratch paint, miss spots, and make you wait 2 hours.</h2>
-                </div>
-                <p class="lead">We built CHROME so that never happens again — with a two-bucket hand wash method, pH-neutral products, and a team that treats your car like it's their own. You'll get a clean car without the worry.</p>
-            </div>
-        </section>
-
-        <!-- ========== Services Overview ========== -->
-        <section class="section section-light" aria-labelledby="services-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">OUR SERVICES</span>
-                    <h2 id="services-heading">Choose your level of care</h2>
-                    <p>From a quick shine to full detailing, every service is done by hand, with premium products and a final inspection.</p>
-                </div>
-
-                <div class="services-grid">
-                    <!-- Express Shine -->
-                    <article class="service-card">
-                        <div class="icon" aria-hidden="true">🚿</div>
-                        <h3>Express Shine</h3>
-                        <div class="price">From KSh 500</div>
-                        <div class="time">30–45 min</div>
-                        <p><strong>For busy professionals who need a clean car fast.</strong></p>
-                        <ul>
-                            <li>Two-bucket hand wash — no scratches</li>
-                            <li>Tyre shine &amp; exterior dry</li>
-                            <li>Interior vacuum &amp; windows</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20an%20Express%20Wash.%20Car%3A%20____%2C%20Preferred%20time%3A%20____" class="btn btn-primary">Book Your Express Wash</a>
-                    </article>
-
-                    <!-- Interior Revival -->
-                    <article class="service-card">
-                        <div class="icon" aria-hidden="true">🧽</div>
-                        <h3>Interior Revival</h3>
-                        <div class="price">From KSh 1,200</div>
-                        <div class="time">~90 min</div>
-                        <p><strong>For families and daily drivers who need the inside to smell new again.</strong></p>
-                        <ul>
-                            <li>Full vacuum &amp; stain removal</li>
-                            <li>Dashboard UV protection</li>
-                            <li>Odour neutraliser</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20an%20Interior%20Deep%20Clean.%20Car%3A%20____%2C%20Preferred%20time%3A%20____" class="btn btn-primary">Book Your Interior Deep Clean</a>
-                    </article>
-
-                    <!-- Signature Detail -->
-                    <article class="service-card">
-                        <div class="icon" aria-hidden="true">✨</div>
-                        <h3>Signature Detail</h3>
-                        <div class="price">From KSh 2,500</div>
-                        <div class="time">~3 hrs</div>
-                        <p><strong>For car enthusiasts who want a showroom finish.</strong></p>
-                        <ul>
-                            <li>Exterior wash + clay bar + wax</li>
-                            <li>Full interior deep clean</li>
-                            <li>Trim restoration &amp; wheel deep clean</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20Full%20Detailing.%20Car%3A%20____%2C%20Preferred%20time%3A%20____" class="btn btn-primary">Book Your Full Detailing</a>
-                    </article>
-
-                    <!-- Ceramic Coating -->
-                    <article class="service-card">
-                        <div class="icon" aria-hidden="true">🛡️</div>
-                        <h3>Ceramic Coating</h3>
-                        <div class="price">From KSh 3,000</div>
-                        <div class="time">Quote</div>
-                        <p><strong>For long-term paint protection and easier cleaning.</strong></p>
-                        <ul>
-                            <li>Decontamination &amp; light polish</li>
-                            <li>Professional ceramic application</li>
-                            <li>After-care instructions</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20a%20quote%20for%20Ceramic%20Coating.%20Car%20model%3A%20____%2C%20Year%3A%20____" class="btn btn-primary">Get a Quote</a>
-                    </article>
-
-                    <!-- Engine Bay Cleaning -->
-                    <article class="service-card">
-                        <div class="icon" aria-hidden="true">⚙️</div>
-                        <h3>Engine Bay Cleaning</h3>
-                        <div class="price">From KSh 800</div>
-                        <div class="time">~45 min</div>
-                        <p><strong>For a clean, protected engine and easier maintenance.</strong></p>
-                        <ul>
-                            <li>Gentle degreasing</li>
-                            <li>Safe rinsing &amp; drying</li>
-                            <li>Dressing on plastic &amp; rubber</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Engine%20Bay%20Cleaning.%20Car%3A%20____%2C%20Preferred%20time%3A%20____" class="btn btn-primary">Book Engine Bay Cleaning</a>
-                    </article>
-
-                    <!-- Leather Care -->
-                    <article class="service-card">
-                        <div class="icon" aria-hidden="true">🪑</div>
-                        <h3>Leather Care</h3>
-                        <div class="price">From KSh 1,000</div>
-                        <div class="time">~60 min</div>
-                        <p><strong>For leather that looks soft, clean, and protected.</strong></p>
-                        <ul>
-                            <li>Leather cleaning &amp; conditioning</li>
-                            <li>UV protection to prevent cracking</li>
-                            <li>Final buffing</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Leather%20Care.%20Car%3A%20____%2C%20Preferred%20time%3A%20____" class="btn btn-primary">Book Leather Care</a>
-                    </article>
-                </div>
-
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="services.html" class="btn btn-outline">View All Services</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Why CHROME (Benefits) ========== -->
-        <section class="section section-dark" aria-labelledby="why-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">THE CHROME STANDARD</span>
-                    <h2 id="why-heading">Why CHROME</h2>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="icon" aria-hidden="true">🚫🧽</div>
-                        <h3>Your Paint Won't Scratch</h3>
-                        <p>Two-bucket hand wash method — no dirty sponges, no machine brushes.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon" aria-hidden="true">🧪</div>
-                        <h3>Your Interior Looks New Again</h3>
-                        <p>pH-neutral cleaning products that lift stains without damaging fabric, leather, or trim.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon" aria-hidden="true">👨‍🔧</div>
-                        <h3>Your Car Is Safe With Us</h3>
-                        <p>Vetted, uniformed staff. CCTV-monitored, fenced facility. You can watch from our lounge.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon" aria-hidden="true">⏰</div>
-                        <h3>Your Time Is Respected</h3>
-                        <p>We start on time and finish on time. If we're late, your next wash is free.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon" aria-hidden="true">✅</div>
-                        <h3>You Only Pay When You're Happy</h3>
-                        <p>Walk around with us before you pay. If you spot an issue, we re-clean it free within 24 hours.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="icon" aria-hidden="true">💵</div>
-                        <h3>No Hidden Charges</h3>
-                        <p>Transparent pricing – you see exactly what you pay for before we start.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== How It Works ========== -->
-        <section class="section section-light" aria-labelledby="how-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">SIMPLE PROCESS</span>
-                    <h2 id="how-heading">Booking is simple</h2>
-                </div>
-
-                <div class="steps">
-                    <div class="step">
-                        <h3>Send a WhatsApp</h3>
-                        <p>"Hi CHROME, I'd like to book a wash for my Toyota Harrier tomorrow at 10 AM."</p>
-                    </div>
-                    <div class="step">
-                        <h3>Get Instant Confirmation</h3>
-                        <p>We reply within 5 minutes with your booking time and exact price.</p>
-                    </div>
-                    <div class="step">
-                        <h3>Drive In &amp; Chill</h3>
-                        <p>Park, grab a coffee, watch your car on camera, or catch up on work.</p>
-                    </div>
-                    <div class="step">
-                        <h3>Approve &amp; Pay</h3>
-                        <p>Walk around with our team. Happy? Pay via M-Pesa or cash. Not happy? We re-clean free within 24 hours.</p>
-                    </div>
-                </div>
-
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20slot." class="btn btn-primary">Book Your Wash — WhatsApp Us</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Pricing Preview ========== -->
-        <section class="section" aria-labelledby="pricing-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">PRICING</span>
-                    <h2 id="pricing-heading">Clear prices. No surprises.</h2>
-                </div>
-
-                <div class="pricing-grid">
-                    <!-- Express Shine -->
-                    <div class="pricing-card">
-                        <h3>Express Shine</h3>
-                        <div class="price">KSh 500</div>
-                        <ul>
-                            <li>Exterior hand wash</li>
-                            <li>Tyre shine</li>
-                            <li>Vacuum</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Express%20Shine." class="btn btn-outline">Select</a>
-                    </div>
-
-                    <!-- Interior Revival (Highlighted) -->
-                    <div class="pricing-card highlight">
-                        <div class="badge">Most Popular</div>
-                        <h3>Interior Revival</h3>
-                        <div class="price">KSh 1,200</div>
-                        <ul>
-                            <li>Interior deep clean</li>
-                            <li>Dashboard UV protection</li>
-                            <li>Seats &amp; carpets</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Interior%20Revival." class="btn btn-primary">Select</a>
-                    </div>
-
-                    <!-- Signature Detail -->
-                    <div class="pricing-card">
-                        <h3>Signature Detail</h3>
-                        <div class="price">KSh 2,500</div>
-                        <ul>
-                            <li>Full exterior + interior detail</li>
-                            <li>Clay bar &amp; wax</li>
-                            <li>Trim restoration</li>
-                        </ul>
-                        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20Signature%20Detail." class="btn btn-outline">Select</a>
-                    </div>
-                </div>
-
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="pricing.html" class="btn btn-outline">See Full Pricing</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Gallery Preview ========== -->
-        <section class="section section-light" aria-labelledby="gallery-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">RESULTS</span>
-                    <h2 id="gallery-heading">Real results. Real cars.</h2>
-                </div>
-
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=400&q=80" alt="Car wash result" width="400" height="300" loading="lazy">
-                        <div class="caption">Express Hand Wash</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=80" alt="Car detailing" width="400" height="300" loading="lazy">
-                        <div class="caption">Full Detailing</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=400&q=80" alt="Clean interior" width="400" height="300" loading="lazy">
-                        <div class="caption">Interior Deep Clean</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=400&q=80" alt="Polished wheel" width="400" height="300" loading="lazy">
-                        <div class="caption">Wheel &amp; Trim</div>
-                    </div>
-                </div>
-
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="gallery.html" class="btn btn-primary">View Gallery</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Testimonials ========== -->
-        <section class="section" aria-labelledby="testimonials-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">TESTIMONIALS</span>
-                    <h2 id="testimonials-heading">Nairobi Eastlands trusts CHROME</h2>
-                </div>
-
-                <div class="testimonial-grid">
-                    <div class="testimonial-card">
-                        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <p class="quote">"My Toyota Harrier had swirl marks from the last place. CHROME's two-bucket wash got them out — the paint looks deeper than when I bought it."</p>
-                        <div class="author">Brian O.</div>
-                        <div class="location">Fedha · Toyota Harrier · Full Detailing, Jan 2025</div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <p class="quote">"I used to worry about safety. At CHROME, the facility is secure and the staff are professional. My car has never looked better."</p>
-                        <div class="author">Wanjiru K.</div>
-                        <div class="location">Tassia · Mazda CX-5 · Interior Deep Clean, Feb 2025</div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-                        <p class="quote">"They cleaned my interior so well I thought I bought a new car. Worth every shilling."</p>
-                        <div class="author">Ahmed M.</div>
-                        <div class="location">Taj Mall · Range Rover Evoque · Express Wash, Mar 2025</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Location & Hours ========== -->
-        <section class="section section-dark" aria-labelledby="location-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">VISIT US</span>
-                    <h2 id="location-heading">Find us in Donholm</h2>
-                </div>
-
-                <div class="contact-grid">
-                    <div>
-                        <p><strong>Address:</strong><br>CHROME Car Wash &amp; Detailing<br>Donholm, Nairobi</p>
-                        <p><strong>Hours:</strong><br>Monday – Sunday: 6:00 AM – 7:00 PM</p>
-                        <p><strong>Service areas:</strong> Donholm, Fedha, Tassia, Taj Mall, Tel Aviv</p>
-                        <a href="https://maps.google.com/?q=Donholm,Nairobi" target="_blank" rel="noopener" class="btn btn-outline btn-light">Get Directions</a>
-                    </div>
-                    <div>
-                        <iframe src="https://www.google.com/maps?q=Donholm,Nairobi&output=embed" width="100%" height="250" style="border:0; border-radius:8px;" loading="lazy" title="CHROME location map"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== FAQ ========== -->
-        <section class="section section-light" aria-labelledby="faq-heading">
-            <div class="container">
-                <div class="section-title">
-                    <span class="eyebrow">FAQ</span>
-                    <h2 id="faq-heading">Questions, answered</h2>
-                </div>
-
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question">Do I need to book in advance?</button>
-                        <div class="faq-answer"><p>We recommend booking via WhatsApp or phone to guarantee a slot, especially on weekends. Walk-ins are welcome if we have space.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">How long will my car be with you?</button>
-                        <div class="faq-answer"><p>Express wash takes 30–45 minutes. Interior deep clean takes about 90 minutes. Full detailing takes 3 hours. We'll tell you the exact time when you book — no surprises.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Can I leave my car and come back later?</button>
-                        <div class="faq-answer"><p>Yes. Our facility is secure, fenced, and CCTV-monitored. Drop your car off in the morning and pick it up by 7 PM.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Is my car safe while it's with you?</button>
-                        <div class="faq-answer"><p>Yes. Our facility is fenced, well-lit, and monitored by CCTV. Staff are vetted and insured. You can also wait in our comfortable lounge.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Do I need to pay in advance?</button>
-                        <div class="faq-answer"><p>No. You pay only after you've approved the final result — M-Pesa or cash.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">What if I'm not happy with the service?</button>
-                        <div class="faq-answer"><p>If you're not completely satisfied, we'll re-clean the affected area free within 24 hours. No arguments.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">Do you offer corporate or fleet packages?</button>
-                        <div class="faq-answer"><p>Yes. We have weekly, bi-weekly, and monthly fleet plans for companies, NGOs, and schools. WhatsApp us for a custom quote.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== Final CTA ========== -->
-        <section class="section section-dark" aria-labelledby="final-cta-heading">
-            <div class="container text-center">
-                <h2 id="final-cta-heading">Ready for a spotless car without the stress?</h2>
-                <p style="color:var(--color-silver);">Book your wash now — WhatsApp us and get confirmed in 5 minutes. We're open until 7 PM today.</p>
-                <div class="hero-cta" style="justify-content:center;">
-                    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service." class="btn btn-whatsapp">Book Your Wash — WhatsApp Us</a>
-                    <a href="tel:0702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
-                </div>
-                <p style="margin-top:1rem; font-size:0.9rem;">If you're not happy, we'll re-clean the affected area free within 24 hours.</p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ========== Footer ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4>CHROME</h4>
-                    <p>Premium car wash &amp; detailing in Donholm, Nairobi.</p>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <a href="services.html">Services</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="about.html">About</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="reviews.html">Reviews</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div>
-                    <h4>Contact</h4>
-                    <a href="tel:0702555093">Phone: 0702 555 093</a>
-                    <a href="https://wa.me/254702555093">WhatsApp: 0702 555 093</a>
-                </div>
-                <div>
-                    <h4>Hours</h4>
-                    <p>Mon–Sun: 6:00 AM – 7:00 PM</p>
-                    <p>Payment: M-Pesa · Cash</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
-            </div>
+        <div class="hero-cta">
+          <a href="book.html" class="btn btn-whatsapp">Book a service</a>
+          <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service." class="btn btn-outline btn-light">WhatsApp Us</a>
         </div>
-    </footer>
 
-    <!-- ========== Floating WhatsApp Button (mobile only) ========== -->
-    <a href="https://wa.me/254702555093" class="floating-whatsapp pulse" aria-label="Chat on WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.766-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-    </a>
+        <ul class="hero-trust">
+          <li><i aria-hidden="true">★</i> 4.9/5 Google rating (300+ reviews)</li>
+          <li><i aria-hidden="true">🔒</i> CCTV-monitored facility</li>
+          <li><i aria-hidden="true">🕕</i> Open 6am – 7pm</li>
+          <li><i aria-hidden="true">💳</i> M-Pesa &amp; cash accepted</li>
+        </ul>
+      </div>
+    </section>
 
-    <!-- ========== Back to Top Button ========== -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    </button>
+    <section class="social-proof" aria-label="Trust signals">
+      <div class="container">
+        <div class="social-proof-item"><span class="icon" aria-hidden="true">★</span> 4.9/5 (300+ Google Reviews)</div>
+        <div class="social-proof-item"><span class="icon" aria-hidden="true">🚗</span> 2,500+ Cars Safely Washed</div>
+        <div class="social-proof-item"><span class="icon" aria-hidden="true">📹</span> CCTV-Monitored, Fenced Facility</div>
+        <div class="social-proof-item"><span class="icon" aria-hidden="true">💳</span> M-Pesa · Cash · Invoicing for Companies</div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section problem" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">WHY WE EXIST</span>
+          <h2 id="problem-heading">You've been to car washes that scratch paint, miss spots, and make you wait 2 hours.</h2>
+        </div>
+        <p class="lead text-center" style="max-width:760px;margin:0 auto;">We built CHROME so that never happens again — with a two-bucket hand wash method, pH-neutral products, and a team that treats your car like it's their own. You'll get a clean car without the worry.</p>
+      </div>
+    </section>
+
+    <section class="section section-light" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">OUR SERVICES</span>
+          <h2 id="services-heading">Choose your level of care</h2>
+          <p>From a quick shine to full detailing, every service is done by hand, with premium products and a final inspection.</p>
+        </div>
+
+        <div class="services-grid stagger-children">
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">🚿</div>
+            <h3>Express Shine</h3>
+            <div class="price">From KSh 500</div>
+            <div class="time">30–45 min</div>
+            <p><strong>For busy professionals who need a clean car fast.</strong></p>
+            <ul>
+              <li>Two-bucket hand wash — no scratches</li>
+              <li>Tyre shine &amp; exterior dry</li>
+              <li>Interior vacuum &amp; windows</li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Express Wash</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">🧽</div>
+            <h3>Interior Revival</h3>
+            <div class="price">From KSh 1,200</div>
+            <div class="time">~90 min</div>
+            <p><strong>For families and daily drivers who need the inside to smell new again.</strong></p>
+            <ul>
+              <li>Full vacuum &amp; stain removal</li>
+              <li>Dashboard UV protection</li>
+              <li>Odour neutraliser</li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Interior Deep Clean</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">✨</div>
+            <h3>Signature Detail</h3>
+            <div class="price">From KSh 2,500</div>
+            <div class="time">~3 hrs</div>
+            <p><strong>For car enthusiasts who want a showroom finish.</strong></p>
+            <ul>
+              <li>Exterior wash + clay bar + wax</li>
+              <li>Full interior deep clean</li>
+              <li>Trim restoration &amp; wheel deep clean</li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Full Detailing</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">🛡️</div>
+            <h3>Ceramic Coating</h3>
+            <div class="price">From KSh 3,000</div>
+            <div class="time">1 day (quote)</div>
+            <p><strong>For long-term paint protection and easier cleaning.</strong></p>
+            <ul>
+              <li>Decontamination &amp; light polish</li>
+              <li>Professional ceramic application</li>
+              <li>After-care instructions</li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Get a Quote</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">⚙️</div>
+            <h3>Engine Bay Cleaning</h3>
+            <div class="price">From KSh 800</div>
+            <div class="time">~45 min</div>
+            <p><strong>For a clean, protected engine and easier maintenance.</strong></p>
+            <ul>
+              <li>Gentle degreasing</li>
+              <li>Safe rinsing &amp; drying</li>
+              <li>Dressing on plastic &amp; rubber</li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Engine Bay Cleaning</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">🪑</div>
+            <h3>Leather Care</h3>
+            <div class="price">From KSh 1,000</div>
+            <div class="time">~60 min</div>
+            <p><strong>For leather that looks soft, clean, and protected.</strong></p>
+            <ul>
+              <li>Leather cleaning &amp; conditioning</li>
+              <li>UV protection to prevent cracking</li>
+              <li>Final buffing</li>
+            </ul>
+            <a href="book.html" class="btn btn-primary">Book Leather Care</a>
+          </article>
+        </div>
+
+        <div class="text-center mt-2">
+          <a href="services.html" class="btn btn-outline">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">THE CHROME STANDARD</span>
+          <h2 id="why-heading">Why CHROME</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-item"><div class="icon" aria-hidden="true">🚫</div><h3>Your Paint Won't Scratch</h3><p>Two-bucket hand wash method — no dirty sponges, no machine brushes.</p></div>
+          <div class="feature-item"><div class="icon" aria-hidden="true">🧪</div><h3>Your Interior Looks New Again</h3><p>pH-neutral products that lift stains without damaging fabric, leather, or trim.</p></div>
+          <div class="feature-item"><div class="icon" aria-hidden="true">👨‍🔧</div><h3>Your Car Is Safe With Us</h3><p>Vetted staff. CCTV-monitored, fenced facility. Watch from our lounge.</p></div>
+          <div class="feature-item"><div class="icon" aria-hidden="true">⏰</div><h3>Your Time Is Respected</h3><p>We start and finish on time. If we're late, your next wash is free.</p></div>
+          <div class="feature-item"><div class="icon" aria-hidden="true">✅</div><h3>You Only Pay When You're Happy</h3><p>Walk around with us before you pay. We re-clean free within 24 hours.</p></div>
+          <div class="feature-item"><div class="icon" aria-hidden="true">💵</div><h3>No Hidden Charges</h3><p>Transparent pricing — see exactly what you pay for before we start.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">SIMPLE PROCESS</span>
+          <h2 id="how-heading">Booking is simple</h2>
+        </div>
+        <div class="steps stagger-children">
+          <div class="step"><h3>Book online or WhatsApp</h3><p>Use our 3-step booking flow, or send a WhatsApp. We reply within 5 minutes.</p></div>
+          <div class="step"><h3>Get Instant Confirmation</h3><p>We confirm your time and exact price — no surprises.</p></div>
+          <div class="step"><h3>Drive In &amp; Chill</h3><p>Park, grab a coffee, watch your car on camera, or catch up on work.</p></div>
+          <div class="step"><h3>Approve &amp; Pay</h3><p>Happy? Pay via M-Pesa or cash. Not happy? We re-clean free within 24 hours.</p></div>
+        </div>
+        <div class="text-center mt-2">
+          <a href="book.html" class="btn btn-whatsapp">Start Your Booking</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">PRICING</span>
+          <h2 id="pricing-heading">Clear prices. No surprises.</h2>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-card"><h3>Express Shine</h3><div class="price">KSh 500</div><ul><li>Exterior hand wash</li><li>Tyre shine</li><li>Vacuum</li></ul><a href="book.html" class="btn btn-outline">Select</a></div>
+          <div class="pricing-card highlight"><div class="badge">Most Popular</div><h3>Interior Revival</h3><div class="price">KSh 1,200</div><ul><li>Interior deep clean</li><li>Dashboard UV protection</li><li>Seats &amp; carpets</li></ul><a href="book.html" class="btn btn-primary">Select</a></div>
+          <div class="pricing-card"><h3>Signature Detail</h3><div class="price">KSh 2,500</div><ul><li>Full detail</li><li>Clay bar &amp; wax</li><li>Trim restoration</li></ul><a href="book.html" class="btn btn-outline">Select</a></div>
+        </div>
+        <div class="text-center mt-2">
+          <a href="pricing.html" class="btn btn-outline">See Full Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">RESULTS</span>
+          <h2 id="gallery-heading">Real results. Real cars.</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 768px) 50vw, 25vw"
+              alt="Hand wash in progress" width="800" height="600" loading="lazy" decoding="async">
+            <div class="caption">Express Hand Wash</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1605164599901-ffc2b6a65f25?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1605164599901-ffc2b6a65f25?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1605164599901-ffc2b6a65f25?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 768px) 50vw, 25vw"
+              alt="Car being polished by hand" width="800" height="600" loading="lazy" decoding="async">
+            <div class="caption">Full Detailing</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1601739241761-d2a3941f5a0b?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1601739241761-d2a3941f5a0b?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1601739241761-d2a3941f5a0b?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 768px) 50vw, 25vw"
+              alt="Clean car interior detail" width="800" height="600" loading="lazy" decoding="async">
+            <div class="caption">Interior Deep Clean</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800&q=75"
+              srcset="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=400&q=70 400w,
+                      https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800&q=75 800w"
+              sizes="(max-width: 768px) 50vw, 25vw"
+              alt="Polished alloy wheel and tyre" width="800" height="600" loading="lazy" decoding="async">
+            <div class="caption">Wheel &amp; Trim</div>
+          </div>
+        </div>
+        <div class="text-center mt-2">
+          <a href="gallery.html" class="btn btn-primary">View Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">TESTIMONIALS</span>
+          <h2 id="testimonials-heading">Nairobi Eastlands trusts CHROME</h2>
+        </div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p class="quote">"My Toyota Harrier had swirl marks from the last place. CHROME's two-bucket wash got them out — the paint looks deeper than when I bought it."</p><div class="author">Brian O.</div><div class="location">Fedha · Toyota Harrier · Full Detailing</div></div>
+          <div class="testimonial-card"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p class="quote">"I used to worry about safety. At CHROME, the facility is secure and the staff are professional. My car has never looked better."</p><div class="author">Wanjiru K.</div><div class="location">Tassia · Mazda CX-5 · Interior Deep Clean</div></div>
+          <div class="testimonial-card"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p class="quote">"They cleaned my interior so well I thought I bought a new car. Worth every shilling."</p><div class="author">Ahmed M.</div><div class="location">Taj Mall · Range Rover Evoque · Express Wash</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" aria-labelledby="location-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">VISIT US</span>
+          <h2 id="location-heading">Find us in Donholm</h2>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <p><strong>Address:</strong><br>CHROME Car Wash &amp; Detailing<br>Donholm, Nairobi</p>
+            <p><strong>Hours:</strong><br>Monday – Sunday: 6:00 AM – 7:00 PM</p>
+            <p><strong>Service areas:</strong> Donholm, Fedha, Tassia, Taj Mall, Tel Aviv</p>
+            <a href="https://maps.google.com/?q=Donholm,Nairobi" target="_blank" rel="noopener" class="btn btn-outline btn-light">Get Directions</a>
+          </div>
+          <div>
+            <iframe src="https://www.google.com/maps?q=Donholm,Nairobi&output=embed" width="100%" height="250" style="border:0;border-radius:8px;" loading="lazy" title="CHROME location map"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-heading">Questions, answered</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question" type="button">Do I need to book in advance?</button><div class="faq-answer"><p>We recommend booking via WhatsApp or our online flow to guarantee a slot, especially on weekends. Walk-ins are welcome if we have space.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button">How long will my car be with you?</button><div class="faq-answer"><p>Express wash: 30–45 min. Interior deep clean: ~90 min. Full detailing: 3 hrs. We'll confirm when you book.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button">Can I leave my car and come back later?</button><div class="faq-answer"><p>Yes. Our facility is secure, fenced, and CCTV-monitored. Drop off in the morning, pick up by 7 PM.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button">Is my car safe while it's with you?</button><div class="faq-answer"><p>Yes. Fenced, well-lit, and monitored by CCTV. Staff are vetted and insured. You can wait in our lounge.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button">Do I need to pay in advance?</button><div class="faq-answer"><p>No. You pay only after you've approved the final result — M-Pesa or cash.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button">What if I'm not happy with the service?</button><div class="faq-answer"><p>We'll re-clean the affected area free within 24 hours. No arguments.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button">Do you offer corporate or fleet packages?</button><div class="faq-answer"><p>Yes. Weekly, bi-weekly, and monthly fleet plans for companies, NGOs, and schools. WhatsApp us for a quote.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" aria-labelledby="final-cta-heading">
+      <div class="container text-center">
+        <h2 id="final-cta-heading">Ready for a spotless car without the stress?</h2>
+        <p>Book in 30 seconds — or WhatsApp us for a quick confirmation. Open until 7 PM today.</p>
+        <div class="hero-cta" style="justify-content:center;">
+          <a href="book.html" class="btn btn-whatsapp">Book a service</a>
+          <a href="tel:+254702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
+        </div>
+        <p style="margin-top:1rem;font-size:0.9rem;">If you're not happy, we'll re-clean the affected area free within 24 hours.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>CHROME</h4><p>Premium car wash &amp; detailing in Donholm, Nairobi.</p></div>
+        <div><h4>Site</h4><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact</h4><a href="tel:+254702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
+        <div><h4>Hours</h4><p>Mon–Sun: 6:00 AM – 7:00 PM</p><p>Payment: M-Pesa · Cash</p></div>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-meta-label">Project</span>
+        <a href="case-study.html">Case study</a>
+        <a href="styleguide.html">Style guide</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
+        <p class="footer-note">Concept project — brand and content created for portfolio purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254702555093" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+  </a>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
