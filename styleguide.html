@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Style Guide — CHROME Car Wash & Detailing</title>
+  <meta name="description" content="The CHROME design system — color, typography, spacing, components, and interaction patterns.">
+  <meta name="theme-color" content="#0F1115">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="announcement-bar">
+    Design system reference. <a href="index.html">Back to site</a>.
+  </div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="case-study.html">Case study</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li class="nav-menu-cta"><a href="index.html" class="btn btn-whatsapp">See live site</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
+        </button>
+        <a href="index.html" class="btn btn-whatsapp nav-cta-desktop">See site</a>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="section section-light" style="padding-top:3.5rem;">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">DESIGN SYSTEM</span>
+          <h1 style="font-size:2.5rem;">CHROME style guide</h1>
+          <p>Every token and component in one place. Copy a snippet, ship it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLORS -->
+    <section class="sg-section">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Color</h2>
+          <p>Six brand colors, plus semantic roles. All contrast pairs documented below.</p>
+        </div>
+
+        <div class="sg-sub">Brand</div>
+        <div class="sg-grid cols-3">
+          <div class="sg-swatch">
+            <div class="sg-swatch-color" style="background:#0F1115;"></div>
+            <div class="sg-swatch-meta"><span class="sg-swatch-name">Graphite</span><span class="sg-swatch-code">--color-dark · #0F1115</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-color" style="background:#1A1D22;"></div>
+            <div class="sg-swatch-meta"><span class="sg-swatch-name">Surface</span><span class="sg-swatch-code">--color-surface · #1A1D22</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-color" style="background:#C9CED4;"></div>
+            <div class="sg-swatch-meta"><span class="sg-swatch-name">Silver</span><span class="sg-swatch-code">--color-silver · #C9CED4</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-color" style="background:#F5F4F0;"></div>
+            <div class="sg-swatch-meta"><span class="sg-swatch-name">Ivory</span><span class="sg-swatch-code">--color-ivory · #F5F4F0</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-color" style="background:#D4AF37;"></div>
+            <div class="sg-swatch-meta"><span class="sg-swatch-name">Gold</span><span class="sg-swatch-code">--color-whatsapp · #D4AF37</span></div>
+          </div>
+          <div class="sg-swatch">
+            <div class="sg-swatch-color" style="background:#2E5E4E;"></div>
+            <div class="sg-swatch-meta"><span class="sg-swatch-name">Trust</span><span class="sg-swatch-code">--color-trust · #2E5E4E</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section class="sg-section section-light">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Typography</h2>
+          <p>Fraunces (headings) + Manrope (body).</p>
+        </div>
+
+        <div class="sg-type-row"><span class="sg-type-label">h1 · 3.5rem</span><h1 style="margin:0;">Safi kabisa</h1></div>
+        <div class="sg-type-row"><span class="sg-type-label">h2 · 2.6rem</span><h2 style="margin:0;">Premium car care</h2></div>
+        <div class="sg-type-row"><span class="sg-type-label">h3 · 1.6rem</span><h3 style="margin:0;">Two-bucket hand wash</h3></div>
+        <div class="sg-type-row"><span class="sg-type-label">lead · 1.15rem</span><p class="lead" style="margin:0;">A larger intro paragraph used at the top of sections.</p></div>
+        <div class="sg-type-row"><span class="sg-type-label">body · 1rem</span><p style="margin:0;">Standard body copy. Manrope 400, 1.7 line-height.</p></div>
+        <div class="sg-type-row"><span class="sg-type-label">eyebrow · 0.85rem</span><span class="eyebrow" style="margin:0;">Section eyebrow</span></div>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="sg-section">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Buttons</h2>
+          <p>Six variants. Minimum tap target 48px. Focus rings use the gold accent.</p>
+        </div>
+        <div class="sg-row">
+          <a href="#" class="btn btn-primary">Primary</a>
+          <a href="#" class="btn btn-outline">Outline</a>
+          <a href="#" class="btn btn-whatsapp">WhatsApp</a>
+          <a href="#" class="btn btn-light">Light</a>
+        </div>
+        <div class="sg-row">
+          <a href="#" class="btn btn-primary btn-sm">Small primary</a>
+          <a href="#" class="btn btn-outline btn-sm">Small outline</a>
+          <a href="#" class="btn btn-primary" disabled style="opacity:0.4; pointer-events:none;">Disabled</a>
+        </div>
+        <div class="sg-row">
+          <a href="#" class="btn btn-primary btn-block">Full-width block button</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACING -->
+    <section class="sg-section section-light">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Spacing</h2>
+          <p>An 8px-based scale, expressed through named tokens.</p>
+        </div>
+        <div class="sg-space-row"><span class="sg-space-label">1rem</span><span class="sg-space-bar" style="width:16px;"></span><span class="text-muted">Default block gap</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">1.5rem</span><span class="sg-space-bar" style="width:24px;"></span><span class="text-muted">Card grid gap</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">2rem</span><span class="sg-space-bar" style="width:32px;"></span><span class="text-muted">Card padding</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">3rem</span><span class="sg-space-bar" style="width:48px;"></span><span class="text-muted">Section title margin</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">5rem</span><span class="sg-space-bar" style="width:80px;"></span><span class="text-muted">Section padding (vertical)</span></div>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="sg-section">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Cards</h2>
+          <p>Service, testimonial, and pricing cards.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon" aria-hidden="true">🚿</div>
+            <h3>Express Shine</h3>
+            <div class="price">From KSh 500</div>
+            <div class="time">30–45 min</div>
+            <p><strong>For busy professionals.</strong></p>
+            <ul><li>Two-bucket hand wash</li><li>Tyre shine</li></ul>
+            <a href="#" class="btn btn-primary">Book</a>
+          </article>
+          <div class="testimonial-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="quote">"Safi kabisa. The paint looked deeper than when I bought the car."</p>
+            <div class="author">Brian O.</div>
+            <div class="location">Fedha · Full Detailing</div>
+          </div>
+          <div class="pricing-card highlight">
+            <div class="badge">Popular</div>
+            <h3>Interior Revival</h3>
+            <div class="price">KSh 1,200</div>
+            <ul><li>Interior deep clean</li><li>Dashboard UV</li></ul>
+            <a href="#" class="btn btn-primary">Select</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM FIELDS -->
+    <section class="sg-section section-light">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Form fields</h2>
+          <p>Always labelled. Always 48px minimum height.</p>
+        </div>
+        <div style="max-width:500px;">
+          <form class="contact-form">
+            <div class="form-field">
+              <label for="demo-text">Text input <span class="req" aria-hidden="true">*</span></label>
+              <input id="demo-text" type="text" placeholder="e.g. Brian Otieno">
+            </div>
+            <div class="form-field">
+              <label for="demo-tel">Phone input</label>
+              <input id="demo-tel" type="tel" inputmode="tel" placeholder="0712 345 678">
+            </div>
+            <div class="form-field">
+              <label for="demo-select">Select</label>
+              <select id="demo-select">
+                <option>Sedan / Hatchback</option>
+                <option>SUV / Crossover</option>
+                <option>Pickup</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="demo-textarea">Textarea</label>
+              <textarea id="demo-textarea" placeholder="Tell us more…"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHIPS & PILLS -->
+    <section class="sg-section">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Chips &amp; pills</h2>
+          <p>Used in gallery filters and booking selections.</p>
+        </div>
+        <div class="filter-chips" style="justify-content:flex-start;">
+          <button class="filter-chip active" type="button">Active</button>
+          <button class="filter-chip" type="button">Default</button>
+          <button class="filter-chip" type="button">Another</button>
+        </div>
+        <div class="pill-row">
+          <label class="pill"><input type="radio" name="demo-pill" checked> Sedan</label>
+          <label class="pill"><input type="radio" name="demo-pill"> SUV</label>
+          <label class="pill"><input type="radio" name="demo-pill"> Pickup</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sg-section section-light">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>FAQ accordion</h2>
+          <p>Also available as a web component: <code>&lt;chrome-faq&gt;</code></p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button">How does the accordion work?</button>
+            <div class="faq-answer"><p>Click a question. Only one is open at a time. All buttons carry <code>aria-expanded</code>.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Is it accessible?</button>
+            <div class="faq-answer"><p>Yes — keyboard, screen reader, and reduced-motion all considered.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BADGES -->
+    <section class="sg-section">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Badges &amp; pills</h2>
+        </div>
+        <div class="sg-row">
+          <span class="status-pill done">Done</span>
+          <span class="status-pill inprogress">In progress</span>
+          <span class="status-pill upcoming">Upcoming</span>
+          <span class="a11y-badge">WCAG AA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARE COMPONENT -->
+    <section class="sg-section section-light">
+      <div class="container">
+        <div class="sg-heading">
+          <h2>Before / After — web component</h2>
+          <p>Use <code>&lt;chrome-compare before="…" after="…" label="…"&gt;&lt;/chrome-compare&gt;</code></p>
+        </div>
+        <chrome-compare
+          before="https://images.unsplash.com/photo-1605618313023-1ee4b4e8f25a?auto=format&fit=crop&w=1200&q=75"
+          after="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=75"
+          label="Example compare">
+        </chrome-compare>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>CHROME</h4><p>Premium car wash &amp; detailing in Donholm, Nairobi.</p></div>
+        <div><h4>Site</h4><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact</h4><a href="tel:+254702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
+        <div><h4>Hours</h4><p>Mon–Sun: 6:00 AM – 7:00 PM</p><p>Payment: M-Pesa · Cash</p></div>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-meta-label">Project</span>
+        <a href="case-study.html">Case study</a>
+        <a href="styleguide.html">Style guide</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
+        <p class="footer-note">Concept project — brand and content created for portfolio purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
