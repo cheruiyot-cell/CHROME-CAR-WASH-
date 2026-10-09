@@ -6,6 +6,8 @@
   <title>Style Guide — CHROME Car Wash & Detailing</title>
   <meta name="description" content="The CHROME design system — color, typography, spacing, components, and interaction patterns.">
   <meta name="theme-color" content="#0F1115">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://chrome-carwash.example/styleguide.html">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +18,9 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <div class="announcement-bar">
+  <div class="announcement-bar" id="announcement-bar">
     Design system reference. <a href="index.html">Back to site</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
   </div>
 
   <header class="header">
@@ -38,18 +41,20 @@
           <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
         </button>
         <a href="index.html" class="btn btn-whatsapp nav-cta-desktop">See site</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </header>
 
   <main id="main">
 
-    <section class="section section-light" style="padding-top:3.5rem;">
+    <section class="section section-light pt-3-5">
       <div class="container">
         <div class="section-title">
           <span class="eyebrow">DESIGN SYSTEM</span>
-          <h1 style="font-size:2.5rem;">CHROME style guide</h1>
+          <h1 class="article-h1">CHROME style guide</h1>
           <p>Every token and component in one place. Copy a snippet, ship it.</p>
         </div>
       </div>
@@ -101,12 +106,12 @@
           <p>Fraunces (headings) + Manrope (body).</p>
         </div>
 
-        <div class="sg-type-row"><span class="sg-type-label">h1 · 3.5rem</span><h1 style="margin:0;">Safi kabisa</h1></div>
-        <div class="sg-type-row"><span class="sg-type-label">h2 · 2.6rem</span><h2 style="margin:0;">Premium car care</h2></div>
-        <div class="sg-type-row"><span class="sg-type-label">h3 · 1.6rem</span><h3 style="margin:0;">Two-bucket hand wash</h3></div>
-        <div class="sg-type-row"><span class="sg-type-label">lead · 1.15rem</span><p class="lead" style="margin:0;">A larger intro paragraph used at the top of sections.</p></div>
-        <div class="sg-type-row"><span class="sg-type-label">body · 1rem</span><p style="margin:0;">Standard body copy. Manrope 400, 1.7 line-height.</p></div>
-        <div class="sg-type-row"><span class="sg-type-label">eyebrow · 0.85rem</span><span class="eyebrow" style="margin:0;">Section eyebrow</span></div>
+        <div class="sg-type-row"><span class="sg-type-label">h1 · 3.5rem</span><h1 class="m-0"><span lang="sw">Safi kabisa</span></h1></div>
+        <div class="sg-type-row"><span class="sg-type-label">h2 · 2.6rem</span><h2 class="m-0">Premium car care</h2></div>
+        <div class="sg-type-row"><span class="sg-type-label">h3 · 1.6rem</span><h3 class="m-0">Two-bucket hand wash</h3></div>
+        <div class="sg-type-row"><span class="sg-type-label">lead · 1.15rem</span><p class="lead m-0">A larger intro paragraph used at the top of sections.</p></div>
+        <div class="sg-type-row"><span class="sg-type-label">body · 1rem</span><p class="m-0">Standard body copy. Manrope 400, 1.7 line-height.</p></div>
+        <div class="sg-type-row"><span class="sg-type-label">eyebrow · 0.85rem</span><span class="eyebrow m-0">Section eyebrow</span></div>
       </div>
     </section>
 
@@ -126,7 +131,7 @@
         <div class="sg-row">
           <a href="#" class="btn btn-primary btn-sm">Small primary</a>
           <a href="#" class="btn btn-outline btn-sm">Small outline</a>
-          <a href="#" class="btn btn-primary" disabled style="opacity:0.4; pointer-events:none;">Disabled</a>
+          <a href="#" class="btn btn-primary btn-disabled" aria-disabled="true" tabindex="-1">Disabled</a>
         </div>
         <div class="sg-row">
           <a href="#" class="btn btn-primary btn-block">Full-width block button</a>
@@ -141,11 +146,11 @@
           <h2>Spacing</h2>
           <p>An 8px-based scale, expressed through named tokens.</p>
         </div>
-        <div class="sg-space-row"><span class="sg-space-label">1rem</span><span class="sg-space-bar" style="width:16px;"></span><span class="text-muted">Default block gap</span></div>
-        <div class="sg-space-row"><span class="sg-space-label">1.5rem</span><span class="sg-space-bar" style="width:24px;"></span><span class="text-muted">Card grid gap</span></div>
-        <div class="sg-space-row"><span class="sg-space-label">2rem</span><span class="sg-space-bar" style="width:32px;"></span><span class="text-muted">Card padding</span></div>
-        <div class="sg-space-row"><span class="sg-space-label">3rem</span><span class="sg-space-bar" style="width:48px;"></span><span class="text-muted">Section title margin</span></div>
-        <div class="sg-space-row"><span class="sg-space-label">5rem</span><span class="sg-space-bar" style="width:80px;"></span><span class="text-muted">Section padding (vertical)</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">1rem</span><span class="sg-space-bar w-16"></span><span class="text-muted">Default block gap</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">1.5rem</span><span class="sg-space-bar w-24"></span><span class="text-muted">Card grid gap</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">2rem</span><span class="sg-space-bar w-32"></span><span class="text-muted">Card padding</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">3rem</span><span class="sg-space-bar w-48"></span><span class="text-muted">Section title margin</span></div>
+        <div class="sg-space-row"><span class="sg-space-label">5rem</span><span class="sg-space-bar w-80"></span><span class="text-muted">Section padding (vertical)</span></div>
       </div>
     </section>
 
@@ -168,7 +173,7 @@
           </article>
           <div class="testimonial-card">
             <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="quote">"Safi kabisa. The paint looked deeper than when I bought the car."</p>
+            <p class="quote">"<span lang="sw">Safi kabisa.</span> The paint looked deeper than when I bought the car."</p>
             <div class="author">Brian O.</div>
             <div class="location">Fedha · Full Detailing</div>
           </div>
@@ -190,7 +195,7 @@
           <h2>Form fields</h2>
           <p>Always labelled. Always 48px minimum height.</p>
         </div>
-        <div style="max-width:500px;">
+        <div class="form-narrow">
           <form class="contact-form">
             <div class="form-field">
               <label for="demo-text">Text input <span class="req" aria-hidden="true">*</span></label>
@@ -225,7 +230,7 @@
           <h2>Chips &amp; pills</h2>
           <p>Used in gallery filters and booking selections.</p>
         </div>
-        <div class="filter-chips" style="justify-content:flex-start;">
+        <div class="filter-chips filter-chips-left">
           <button class="filter-chip active" type="button">Active</button>
           <button class="filter-chip" type="button">Default</button>
           <button class="filter-chip" type="button">Another</button>

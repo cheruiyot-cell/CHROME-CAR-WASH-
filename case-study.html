@@ -7,7 +7,6 @@
   <meta name="description" content="How and why CHROME was designed and built — a mobile-first, WhatsApp-led marketing site for a Nairobi car wash. Design decisions, technical choices, and outcomes.">
   <meta name="theme-color" content="#0F1115">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CHROME Car Wash & Detailing">
   <meta property="og:locale" content="en_KE">
@@ -18,19 +17,16 @@
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://chrome-carwash.example/case-study.html">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Case Study — CHROME Car Wash">
   <meta name="twitter:description" content="How and why CHROME was designed — a mobile-first, WhatsApp-led site for a Nairobi car wash.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
 
-  <!-- Canonical & PWA -->
   <link rel="canonical" href="https://chrome-carwash.example/case-study.html">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
 
-  <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://wa.me">
@@ -66,19 +62,21 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
         </a>
         <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </header>
 
   <main id="main">
 
-    <section class="section section-light" style="padding-top:3.5rem;padding-bottom:2rem;">
+    <section class="section section-light pt-3-5 pb-2">
       <div class="container">
         <div class="article">
           <span class="eyebrow">CASE STUDY</span>
-          <h1 style="font-size:2.5rem;margin-bottom:0.75rem;">CHROME: a mobile-first, WhatsApp-led marketing site for a Nairobi car wash</h1>
-          <p class="lead" style="margin-bottom:2rem;">A portfolio project exploring how a small premium service business in Kenya can convert mobile traffic into bookings with a fast, accessible, WhatsApp-first site — no framework, no backend, no budget for custom photography.</p>
+          <h1 class="article-h1">CHROME: a mobile-first, WhatsApp-led marketing site for a Nairobi car wash</h1>
+          <p class="lead mb-2">A portfolio project exploring how a small premium service business in Kenya can convert mobile traffic into bookings with a fast, accessible, WhatsApp-first site — no framework, no backend, no budget for custom photography.</p>
 
           <div class="kpi-grid">
             <div class="kpi"><span class="kpi-value">~10KB</span><span class="kpi-label">CSS gzipped</span></div>
@@ -87,7 +85,7 @@
             <div class="kpi"><span class="kpi-value">AA</span><span class="kpi-label">WCAG target</span></div>
           </div>
 
-          <div class="toc">
+          <nav class="toc" aria-label="Table of contents">
             <strong>Contents</strong>
             <ol>
               <li><a href="#brief">The brief</a></li>
@@ -98,7 +96,7 @@
               <li><a href="#outcome">Outcome</a></li>
               <li><a href="#next">What I'd do with a real budget</a></li>
             </ol>
-          </div>
+          </nav>
 
           <h2 id="brief">1. The brief</h2>
           <p>Design and build a premium-feeling website for a fictional car wash in Donholm, Nairobi. The goal: increase WhatsApp bookings from mobile users in Nairobi's Eastlands — Donholm, Fedha, Tassia, Taj Mall, Tel Aviv.</p>
@@ -123,7 +121,7 @@
           <p>Users don't care if the site loads in 1s or 3s — they care if the WhatsApp reply comes in 5 minutes. The site promises this explicitly ("we'll confirm within 5 minutes") because it is a competitive advantage, not a feature.</p>
 
           <h3>Insight 3 — Local language builds trust cheaply</h3>
-          <p>"Safi kabisa" and "Hapa ni kwenu. Karibu CHROME." are used sparingly, in high-trust moments (testimonials, closing CTAs). The rest of the site is English. Mixing registers deliberately signals: <em>we are professional, and we are yours</em>.</p>
+          <p>"<span lang="sw">Safi kabisa</span>" and "<span lang="sw">Hapa ni kwenu. Karibu CHROME.</span>" are used sparingly, in high-trust moments (testimonials, closing CTAs). The rest of the site is English. Mixing registers deliberately signals: <em>we are professional, and we are yours</em>.</p>
 
           <h2 id="design">4. Design decisions</h2>
           <h3>Why graphite + gold</h3>

@@ -1,7 +1,8 @@
 /* =========================================
-   CHROME — Main JavaScript v3.1
-   Updates: theme-color sync, dismissible
-            announcement, lightbox focus trap
+   CHROME — Main JavaScript v3.2
+   Updates: mobile menu focus trap,
+            form-status reset, announcement
+            bar 7-day expiry, sw cache sync
    ========================================= */
 
 (function () {
@@ -9,6 +10,7 @@
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isDesktop = () => window.innerWidth >= 1024;
+  const ANNOUNCEMENT_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
   /* ---------- Theme ---------- */
   function applyTheme(theme, persist) {
@@ -41,19 +43,22 @@
     });
   }
 
-  /* ---------- Announcement bar ---------- */
+  /* ---------- Announcement bar (7-day dismissal) ---------- */
   function initAnnouncementBar() {
     const bar = document.getElementById('announcement-bar');
     if (!bar) return;
-    if (localStorage.getItem('chrome-announcement-dismissed') === 'true') {
+
+    const dismissedAt = parseInt(localStorage.getItem('chrome-announcement-dismissed-at') || '0', 10);
+    if (dismissedAt && Date.now() - dismissedAt < ANNOUNCEMENT_TTL_MS) {
       bar.classList.add('hidden');
       return;
     }
+
     const btn = bar.querySelector('.announcement-dismiss');
     if (!btn) return;
     btn.addEventListener('click', () => {
       bar.classList.add('hidden');
-      localStorage.setItem('chrome-announcement-dismissed', 'true');
+      localStorage.setItem('chrome-announcement-dismissed-at', String(Date.now()));
     });
   }
 
@@ -66,29 +71,68 @@
     onScroll();
   }
 
-  /* ---------- Mobile menu ---------- */
+  /* ---------- Mobile menu (with focus trap + restore) ---------- */
   function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     if (!hamburger || !navMenu) return;
 
-    const closeMenu = () => {
+    let lastFocused = null;
+
+    const focusables = () =>
+      Array.from(navMenu.querySelectorAll('a[href], button:not([disabled])'))
+        .filter(el => el.offsetParent !== null);
+
+    function openMenu() {
+      lastFocused = document.activeElement;
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      navMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      const first = focusables()[0];
+      if (first) first.focus();
+    }
+
+    function closeMenu() {
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
       navMenu.classList.remove('active');
       document.body.style.overflow = '';
-    };
+      if (lastFocused && document.contains(lastFocused)) lastFocused.focus();
+      lastFocused = null;
+    }
 
     hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('active');
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      navMenu.classList.toggle('active');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      if (navMenu.classList.contains('active')) closeMenu();
+      else openMenu();
     });
+
     navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) closeMenu();
+      if (!navMenu.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeMenu();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const items = focusables();
+        if (!items.length) return;
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
+
     window.addEventListener('resize', () => {
       if (isDesktop() && navMenu.classList.contains('active')) closeMenu();
     });
@@ -157,7 +201,8 @@
       slider.addEventListener('click', (e) => {
         if (e.target === range) return;
         const src = afterImg.src || slider.querySelector('.before-img')?.src;
-        if (src) openLightbox(src, slider);
+        const alt = afterImg.alt || slider.querySelector('.before-img')?.alt || 'Image preview';
+        if (src) openLightbox(src, slider, alt);
       });
 
       range.addEventListener('input', () => slider.classList.add('dragged'));
@@ -168,7 +213,7 @@
   let lightboxEl;
   let lightboxTrigger = null;
 
-  function openLightbox(src, trigger) {
+  function openLightbox(src, trigger, alt) {
     if (!lightboxEl) {
       lightboxEl = document.createElement('div');
       lightboxEl.className = 'lightbox';
@@ -198,7 +243,9 @@
       });
     }
     lightboxTrigger = trigger || document.activeElement;
-    lightboxEl.querySelector('img').src = src;
+    const img = lightboxEl.querySelector('img');
+    img.src = src;
+    img.alt = alt || '';
     requestAnimationFrame(() => lightboxEl.classList.add('open'));
     document.body.style.overflow = 'hidden';
     lightboxEl.querySelector('.lightbox-close').focus();
@@ -262,25 +309,35 @@
     const callbackForm = document.getElementById('callback-form');
     if (!callbackForm) return;
     const statusDiv = document.getElementById('form-status');
+
     callbackForm.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Reset state on every submit so a previous error/success doesn't linger
+      if (statusDiv) {
+        statusDiv.textContent = '';
+        statusDiv.className = 'form-status';
+      }
+
       const name = callbackForm.querySelector('#cb-name')?.value.trim() || '';
       const phone = callbackForm.querySelector('#cb-phone')?.value.trim() || '';
-      const time = callbackForm.querySelector('#cb-time')?.value.trim() || '';
-      const message = callbackForm.querySelector('#cb-message')?.value.trim() || '';
+
       if (!name || !phone) {
-        statusDiv.textContent = 'Please enter your name and phone number.';
-        statusDiv.className = 'form-status error';
+        if (statusDiv) {
+          statusDiv.textContent = 'Please enter your name and phone number.';
+          statusDiv.className = 'form-status error';
+        }
         return;
       }
+
       const text = encodeURIComponent(
-        `Hello CHROME, I'd like a callback.\n\nName: ${name}\nPhone: ${phone}\n` +
-        (time ? `Preferred time: ${time}\n` : '') +
-        (message ? `Message: ${message}` : '')
+        `Hello CHROME, I'd like a callback.\n\nName: ${name}\nPhone: ${phone}`
       );
       window.open(`https://wa.me/254702555093?text=${text}`, '_blank', 'noopener');
-      statusDiv.textContent = 'Opening WhatsApp… If nothing happens, please call 0702 555 093.';
-      statusDiv.className = 'form-status success';
+      if (statusDiv) {
+        statusDiv.textContent = 'Opening WhatsApp… If nothing happens, please call 0702 555 093.';
+        statusDiv.className = 'form-status success';
+      }
       callbackForm.reset();
     });
   }

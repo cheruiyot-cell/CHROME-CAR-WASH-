@@ -1,6 +1,7 @@
 /* =========================================
-   CHROME — Booking flow v1.1
-   Updates: :has() fallback with .is-selected
+   CHROME — Booking flow v1.2
+   Updates: local-date fix (was UTC), safer
+            initialisation, fallback class sync
    ========================================= */
 (function () {
   'use strict';
@@ -43,10 +44,21 @@
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const prefersReduced = () =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function fmtKsh(n) { return 'KSh ' + n.toLocaleString('en-KE'); }
 
-  /* Applies .is-selected to label wrappers — fallback for browsers without :has() */
+  /* Format a Date as YYYY-MM-DD using LOCAL calendar fields.
+     toISOString() would return the UTC date, which shifts to the wrong
+     day for users east of UTC (e.g. Nairobi, UTC+3) after 21:00 local. */
+  function toLocalISODate(d) {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
   function syncSelectionState(root, groupName) {
     if (!root) return;
     root.querySelectorAll(`input[name="${groupName}"]`).forEach(input => {
@@ -135,7 +147,7 @@
     if (!root) return;
     const days = buildDateSlots();
     root.innerHTML = days.map((d, i) => {
-      const val = d.toISOString().slice(0, 10);
+      const val = toLocalISODate(d);           // ← fix: local, not UTC
       const dayName = d.toLocaleDateString('en-KE', { weekday: 'short' });
       const dayNum = d.getDate();
       const month = d.toLocaleDateString('en-KE', { month: 'short' });
@@ -225,11 +237,10 @@
     if (n === 3) renderSummary();
     window.scrollTo({ top: 0, behavior: prefersReduced() ? 'auto' : 'smooth' });
   }
-  const prefersReduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function formatDate(iso) {
     if (!iso) return '—';
-    const d = new Date(iso + 'T00:00:00');
+    const d = new Date(iso + 'T00:00:00'); // local midnight, matches toLocalISODate
     return d.toLocaleDateString('en-KE', { weekday: 'long', day: 'numeric', month: 'long' });
   }
   function formatTime(t) {

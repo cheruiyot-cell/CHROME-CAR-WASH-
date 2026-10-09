@@ -6,11 +6,35 @@
   <title>About CHROME — Premium Car Wash & Detailing in Donholm, Nairobi</title>
   <meta name="description" content="Learn about CHROME, Nairobi Eastlands' trusted premium car wash and detailing studio in Donholm. Vetted staff, secure facility, paint-safe products.">
   <meta name="theme-color" content="#0F1115">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHROME Car Wash & Detailing">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:title" content="About CHROME — Car Wash & Detailing in Donholm">
+  <meta property="og:description" content="Vetted staff, secure facility, paint-safe products. Built so Eastlands has a premium car-care standard it can trust.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&h=630&q=75">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://chrome-carwash.example/about.html">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About CHROME — Car Wash & Detailing in Donholm">
+  <meta name="twitter:description" content="The safe place for Nairobi's cars. Built for Eastlands. Open 6am–7pm.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&h=630&q=75">
+
+  <!-- Canonical & PWA -->
+  <link rel="canonical" href="https://chrome-carwash.example/about.html">
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://wa.me">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
@@ -18,9 +42,10 @@
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <div class="announcement-bar">
+  <div class="announcement-bar" id="announcement-bar">
     Same-day slots available in Donholm.
     <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
   </div>
 
   <header class="header">
@@ -88,7 +113,7 @@
     <section class="section section-light">
       <div class="container">
         <div class="article">
-          <div class="section-title" style="text-align:left;">
+          <div class="section-title section-title-left">
             <h2>From frustration to a better standard.</h2>
           </div>
           <p class="lead">You've been to car washes that left swirl marks, missed spots, and made you nervous about leaving your car. We built CHROME to be the opposite – a calm, secure, premium car-care studio where your car is treated with respect.</p>
@@ -102,7 +127,7 @@
     <section class="section">
       <div class="container text-center">
         <h2>Why we do what we do.</h2>
-        <p style="max-width:720px;margin:0 auto;">To give Nairobi car owners a car wash experience they can trust — one that is premium, safe, and consistent. We exist to protect your car, respect your time, and remove the stress from car care.</p>
+        <p class="mx-auto max-w-720">To give Nairobi car owners a car wash experience they can trust — one that is premium, safe, and consistent. We exist to protect your car, respect your time, and remove the stress from car care.</p>
       </div>
     </section>
 
@@ -124,7 +149,7 @@
             <p>A comfortable lounge and a calm environment.</p>
           </div>
           <div class="feature-item">
-            <h3>Safi kabisa every single time.</h3>
+            <h3><span lang="sw">Safi kabisa</span> every single time.</h3>
             <p>The CHROME standard doesn't change.</p>
           </div>
         </div>
@@ -150,13 +175,13 @@
     <section class="section section-light">
       <div class="container">
         <div class="section-title"><h2>A space built for your peace of mind.</h2></div>
-        <p style="max-width:760px;margin:0 auto 1.5rem;">CHROME is located in Donholm, with easy access from Fedha, Tassia, Taj Mall, and Tel Aviv. Our facility is fenced, well-lit, and covered by CCTV. We've intentionally designed the waiting area to feel calm and secure.</p>
-        <ul style="max-width:600px;margin:0 auto;">
-          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;">Secure, gated compound</li>
-          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;">CCTV monitoring</li>
-          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;">Clean, comfortable waiting lounge</li>
-          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;">Clear viewing area of the wash bay</li>
-          <li style="padding-left:1.5rem;position:relative;">M-Pesa and cash payment accepted on-site</li>
+        <p class="mx-auto max-w-760 mb-1">CHROME is located in Donholm, with easy access from Fedha, Tassia, Taj Mall, and Tel Aviv. Our facility is fenced, well-lit, and covered by CCTV. We've intentionally designed the waiting area to feel calm and secure.</p>
+        <ul class="check-list mx-auto max-w-600">
+          <li>Secure, gated compound</li>
+          <li>CCTV monitoring</li>
+          <li>Clean, comfortable waiting lounge</li>
+          <li>Clear viewing area of the wash bay</li>
+          <li>M-Pesa and cash payment accepted on-site</li>
         </ul>
         <div class="text-center mt-2">
           <a href="https://maps.google.com/?q=Donholm,Nairobi" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
@@ -168,12 +193,12 @@
     <section class="section">
       <div class="container">
         <div class="section-title"><h2>The hands behind the shine.</h2></div>
-        <p style="max-width:760px;margin:0 auto 1rem;">Every CHROME team member is vetted, uniformed, and trained in professional car-care techniques. Our team knows paint types, interior materials, and the right product for every surface.</p>
-        <ul style="max-width:600px;margin:0 auto;">
-          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;">Background-checked before they touch your car</li>
-          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;">Trained in two-bucket method and safe product use</li>
-          <li style="padding-left:1.5rem;position:relative;margin-bottom:0.5rem;">Insured for your peace of mind</li>
-          <li style="padding-left:1.5rem;position:relative;">Friendly, professional, and respectful at all times</li>
+        <p class="mx-auto max-w-760 mb-1">Every CHROME team member is vetted, uniformed, and trained in professional car-care techniques. Our team knows paint types, interior materials, and the right product for every surface.</p>
+        <ul class="check-list mx-auto max-w-600">
+          <li>Background-checked before they touch your car</li>
+          <li>Trained in two-bucket method and safe product use</li>
+          <li>Insured for your peace of mind</li>
+          <li>Friendly, professional, and respectful at all times</li>
         </ul>
       </div>
     </section>
@@ -182,8 +207,8 @@
     <section class="section section-dark">
       <div class="container text-center">
         <h2>Rooted in Donholm. Built for Eastlands.</h2>
-        <p style="max-width:720px;margin:0 auto;">Nairobi Eastlands is full of hardworking people who take pride in their cars — but for too long, premium car care meant driving across town. CHROME brings that standard home.</p>
-        <p style="font-style:italic;">Hapa ni kwenu. Karibu CHROME.</p>
+        <p class="mx-auto max-w-720">Nairobi Eastlands is full of hardworking people who take pride in their cars — but for too long, premium car care meant driving across town. CHROME brings that standard home.</p>
+        <p style="font-style:italic;"><span lang="sw">Hapa ni kwenu. Karibu CHROME.</span></p>
       </div>
     </section>
 
@@ -219,7 +244,7 @@
       <div class="container text-center">
         <h2>Come see why Eastlands trusts CHROME.</h2>
         <p>Book your first visit today. We'll show you the difference a premium, safe car-care experience makes.</p>
-        <div class="hero-cta" style="justify-content:center;">
+        <div class="hero-cta hero-cta-center">
           <a href="book.html" class="btn btn-whatsapp">Book a service</a>
           <a href="tel:+254702555093" class="btn btn-outline">Call 0702 555 093</a>
         </div>

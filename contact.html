@@ -83,6 +83,7 @@
 
   <main id="main">
 
+    <!-- ========== Hero ========== -->
     <section class="hero">
       <img class="hero-bg" alt=""
         src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=75"
@@ -108,7 +109,7 @@
             <a href="book.html" class="btn btn-whatsapp">Start Booking</a>
           </div>
         </div>
-        <ul class="hero-trust" style="margin-top:2rem;">
+        <ul class="hero-trust mt-2">
           <li><i aria-hidden="true">🕕</i> Same-day slots often available</li>
           <li><i aria-hidden="true">🔒</i> Secure facility</li>
           <li><i aria-hidden="true">💳</i> M-Pesa &amp; cash</li>
@@ -116,6 +117,7 @@
       </div>
     </section>
 
+    <!-- ========== Contact grid ========== -->
     <section class="section section-light">
       <div class="container">
         <div class="contact-grid">
@@ -139,16 +141,19 @@
             <h3>Quick Booking via WhatsApp</h3>
             <p>Tap the button below to open a chat with a pre-filled message. Just add your car type, service, and preferred time — we'll confirm right away.</p>
             <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service.%20Car%3A%20____%2C%20Service%3A%20____%2C%20Preferred%20date%2Ftime%3A%20____." class="btn btn-whatsapp">Start WhatsApp Chat</a>
-            <p style="margin-top:0.75rem;font-size:0.9rem;color:var(--color-text-muted);">"Hello CHROME, I'd like to book a service. Car: ____, Service: ____, Preferred date/time: ____. Please confirm availability."</p>
+            <p class="text-muted mt-1 text-sm">"Hello CHROME, I'd like to book a service. Car: ____, Service: ____, Preferred date/time: ____. Please confirm availability."</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ========== Callback form ========== -->
     <section class="section">
-      <div class="container" style="max-width:640px;">
-        <div class="section-title"><h2>We'll call you back</h2></div>
-        <p>Leave your name and number below. We'll get back to you within 30 minutes during opening hours. Tapping "Request Callback" opens WhatsApp with your details pre-filled.</p>
+      <div class="container narrow-container">
+        <div class="section-title">
+          <h2>We'll call you back</h2>
+        </div>
+        <p class="text-center">Leave your name and number below. We'll get back to you within 30 minutes during opening hours. Tapping "Request Callback" opens WhatsApp with your details pre-filled.</p>
         <form class="contact-form" id="callback-form" novalidate>
           <div class="form-field">
             <label for="cb-name">Your name <span class="req" aria-hidden="true">*</span></label>
@@ -158,21 +163,14 @@
             <label for="cb-phone">Phone number <span class="req" aria-hidden="true">*</span></label>
             <input id="cb-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="e.g. 0712 345 678">
           </div>
-          <div class="form-field">
-            <label for="cb-time">Preferred time to call (optional)</label>
-            <input id="cb-time" name="time" type="text" placeholder="e.g. Weekday mornings">
-          </div>
-          <div class="form-field">
-            <label for="cb-message">Message (optional)</label>
-            <textarea id="cb-message" name="message" placeholder="Tell us your car and what you need"></textarea>
-          </div>
           <button type="submit" class="btn btn-whatsapp">Request Callback</button>
         </form>
         <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-        <p style="margin-top:1rem;">For immediate assistance, please call or WhatsApp <a href="tel:+254702555093">0702 555 093</a>.</p>
+        <p class="mt-1">For immediate assistance, please call or WhatsApp <a href="tel:+254702555093">0702 555 093</a>.</p>
       </div>
     </section>
 
+    <!-- ========== Map & service areas ========== -->
     <section class="section section-dark">
       <div class="container">
         <div class="section-title"><h2>Find us in Donholm</h2></div>
@@ -180,7 +178,7 @@
           <div>
             <p><strong>Address:</strong><br>CHROME Car Wash &amp; Detailing<br>Donholm, Nairobi</p>
             <p><strong>Service areas:</strong></p>
-            <ul style="padding-left:1rem;list-style:disc;color:var(--color-silver);">
+            <ul class="bullet-list">
               <li>Donholm</li>
               <li>Fedha</li>
               <li>Tassia</li>
@@ -196,6 +194,7 @@
       </div>
     </section>
 
+    <!-- ========== Payment ========== -->
     <section class="section section-light">
       <div class="container text-center">
         <h2>Pay your way</h2>
@@ -203,6 +202,7 @@
       </div>
     </section>
 
+    <!-- ========== FAQ ========== -->
     <section class="section">
       <div class="container">
         <div class="section-title"><h2>Before you reach out</h2></div>
@@ -235,11 +235,12 @@
       </div>
     </section>
 
+    <!-- ========== Final CTA ========== -->
     <section class="section section-dark">
       <div class="container text-center">
         <h2>Your car deserves the CHROME standard.</h2>
         <p>We're open today until 7 PM. Book online or WhatsApp us now to secure your slot.</p>
-        <div class="hero-cta" style="justify-content:center;">
+        <div class="hero-cta hero-cta-center">
           <a href="book.html" class="btn btn-whatsapp">Book a service</a>
           <a href="tel:+254702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
         </div>

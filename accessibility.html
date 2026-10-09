@@ -7,7 +7,6 @@
   <meta name="description" content="CHROME's accessibility statement — what we tested, what we target (WCAG 2.1 AA), known limitations, and how to send feedback.">
   <meta name="theme-color" content="#0F1115">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CHROME Car Wash & Detailing">
   <meta property="og:locale" content="en_KE">
@@ -18,19 +17,16 @@
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://chrome-carwash.example/accessibility.html">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Accessibility Statement — CHROME">
   <meta name="twitter:description" content="WCAG 2.1 AA target. Read our testing notes and known limitations.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
 
-  <!-- Canonical & PWA -->
   <link rel="canonical" href="https://chrome-carwash.example/accessibility.html">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
 
-  <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://wa.me">
@@ -63,18 +59,20 @@
           <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
         </button>
         <a href="index.html" class="btn btn-whatsapp nav-cta-desktop">See site</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </header>
 
   <main id="main">
 
-    <section class="section section-light" style="padding-top:3.5rem;">
+    <section class="section section-light pt-3-5">
       <div class="container">
         <div class="article">
           <span class="eyebrow">ACCESSIBILITY</span>
-          <h1 style="font-size:2.5rem;margin-bottom:0.75rem;">Accessibility statement</h1>
+          <h1 class="article-h1">Accessibility statement</h1>
           <p class="lead">CHROME is designed so that everyone — including people using screen readers, keyboard navigation, or reduced-motion settings — can learn about our services and book a wash.</p>
 
           <div class="a11y-badges" role="list">
@@ -94,7 +92,7 @@
             <li><strong>Skip link.</strong> Keyboard users can jump straight to the main content.</li>
             <li><strong>Contrast.</strong> All interactive text passes AA. The WhatsApp CTA uses dark-on-gold for a contrast ratio of ~8.6:1.</li>
             <li><strong>Focus states.</strong> Every interactive element shows a visible focus ring with a dark underlay, so focus stays visible on light and dark surfaces alike.</li>
-            <li><strong>Keyboard support.</strong> Mobile menu, FAQ accordion, gallery filters, theme toggle, and lightbox are all operable without a mouse. Escape closes overlays. The lightbox traps focus while open and restores it on close.</li>
+            <li><strong>Keyboard support.</strong> Mobile menu, FAQ accordion, gallery filters, theme toggle, and lightbox are all operable without a mouse. Escape closes overlays. The mobile menu and lightbox trap focus while open and restore it on close.</li>
             <li><strong>Screen reader labels.</strong> Buttons, icon-only controls, and form inputs all have accessible names. Decorative icons carry <code>aria-hidden</code>.</li>
             <li><strong>Form design.</strong> Inputs are always labelled (not placeholder-only), use semantic types (<code>tel</code>, <code>name</code>), and set <code>autocomplete</code> where relevant.</li>
             <li><strong>Motion.</strong> The site respects <code>prefers-reduced-motion</code>. Animations are subtle and never necessary to understand content.</li>
@@ -134,7 +132,7 @@
             <li>Accessibility snapshot added to the case study page.</li>
           </ul>
 
-          <p class="text-muted" style="font-size:0.9rem;margin-top:2rem;"><em>Last updated: <span id="a11y-updated">2025</span>.</em></p>
+          <p class="text-muted text-sm mt-2"><em>Last updated: <span id="a11y-updated">2025</span>.</em></p>
 
         </div>
       </div>
