@@ -9,9 +9,24 @@
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://chrome-carwash.example/dashboard.html">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dash-shell">
@@ -33,7 +48,6 @@
   <main id="main" class="dash-body">
     <div class="container">
 
-      <!-- KPIs -->
       <div class="dash-grid cols-4">
         <div class="dash-card">
           <h3>Today's bookings</h3>
@@ -57,7 +71,6 @@
         </div>
       </div>
 
-      <!-- Charts + today -->
       <div class="dash-grid cols-2">
 
         <div class="dash-card">
@@ -89,14 +102,13 @@
         </div>
       </div>
 
-      <!-- Today's bookings + Popular services -->
       <div class="dash-grid cols-2">
 
         <div class="dash-card">
           <div class="dash-card-title">Today's schedule</div>
           <table class="dash-table">
             <thead>
-              <tr><th>Time</th><th>Customer</th><th>Service</th><th>Status</th></tr>
+              <tr><th scope="col">Time</th><th scope="col">Customer</th><th scope="col">Service</th><th scope="col">Status</th></tr>
             </thead>
             <tbody>
               <tr><td>08:00</td><td>B. Otieno</td><td>Signature Detail</td><td><span class="status-pill done">Done</span></td></tr>
@@ -131,12 +143,11 @@
 
       </div>
 
-      <!-- Fleet -->
       <div class="dash-card mb-1-5">
         <div class="dash-card-title">Fleet contracts</div>
         <table class="dash-table">
           <thead>
-            <tr><th>Client</th><th>Vehicles</th><th>Plan</th><th>Next visit</th><th>Monthly value</th></tr>
+            <tr><th scope="col">Client</th><th scope="col">Vehicles</th><th scope="col">Plan</th><th scope="col">Next visit</th><th scope="col">Monthly value</th></tr>
           </thead>
           <tbody>
             <tr><td>DHL Eastlands (demo)</td><td>12</td><td>Weekly</td><td>Fri, 10 Oct</td><td>KSh 96,000</td></tr>

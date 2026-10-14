@@ -27,10 +27,24 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
 
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://wa.me">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -45,13 +59,14 @@
     <nav class="nav container" aria-label="Main navigation">
       <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-menu-cta"><a href="book.html" class="btn btn-whatsapp">Book a service</a></li>
+        <li class="nav-menu-cta"><a href="tel:+254702555093" class="phone-link">Call 0702 555 093</a></li>
       </ul>
       <div class="nav-actions">
         <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
@@ -62,7 +77,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
         </a>
         <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>

@@ -27,12 +27,30 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
 
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://wa.me">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <link rel="preload" as="image"
+    imagesrcset="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=640&q=70 640w,
+                 https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=75 1200w,
+                 https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1800&q=75 1800w"
+    imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -70,7 +88,7 @@
         </a>
         <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
         <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -96,9 +114,9 @@
           <a href="tel:+254702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
         </div>
         <ul class="hero-trust">
-          <li><i aria-hidden="true">🕕</i> Open 6am – 7pm</li>
-          <li><i aria-hidden="true">🔒</i> Secure facility</li>
-          <li><i aria-hidden="true">💳</i> M-Pesa &amp; cash accepted</li>
+          <li><span aria-hidden="true">🕕</span> Open 6am – 7pm</li>
+          <li><span aria-hidden="true">🔒</span> Secure facility</li>
+          <li><span aria-hidden="true">💳</span> M-Pesa &amp; cash accepted</li>
         </ul>
       </div>
     </section>
@@ -153,14 +171,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>Exterior hand wash</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Interior vacuum</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Dashboard &amp; trim clean</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Seat shampoo</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Clay bar treatment</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Wax / sealant</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Paint correction</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
-              <tr><td>Ceramic protection</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+              <tr><td>Exterior hand wash</td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
+              <tr><td>Interior vacuum</td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
+              <tr><td>Dashboard &amp; trim clean</td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
+              <tr><td>Seat shampoo</td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
+              <tr><td>Clay bar treatment</td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
+              <tr><td>Wax / sealant</td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
+              <tr><td>Paint correction</td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
+              <tr><td>Ceramic protection</td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">❌</span><span class="sr-only">No</span></td><td><span aria-hidden="true">✅</span><span class="sr-only">Yes</span></td></tr>
               <tr><td>Duration</td><td>30–45 min</td><td>90 min</td><td>3 hrs</td><td>1 day</td></tr>
               <tr><td>Price from</td><td>KSh 500</td><td>KSh 1,200</td><td>KSh 2,500</td><td>KSh 3,000</td></tr>
             </tbody>

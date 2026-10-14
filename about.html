@@ -7,7 +7,6 @@
   <meta name="description" content="Learn about CHROME, Nairobi Eastlands' trusted premium car wash and detailing studio in Donholm. Vetted staff, secure facility, paint-safe products.">
   <meta name="theme-color" content="#0F1115">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CHROME Car Wash & Detailing">
   <meta property="og:locale" content="en_KE">
@@ -18,25 +17,40 @@
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://chrome-carwash.example/about.html">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About CHROME — Car Wash & Detailing in Donholm">
   <meta name="twitter:description" content="The safe place for Nairobi's cars. Built for Eastlands. Open 6am–7pm.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&h=630&q=75">
 
-  <!-- Canonical & PWA -->
   <link rel="canonical" href="https://chrome-carwash.example/about.html">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
 
-  <!-- Preconnects -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://wa.me">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <link rel="preload" as="image"
+    imagesrcset="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=640&q=70 640w,
+                 https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=75 1200w,
+                 https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1800&q=75 1800w"
+    imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -74,7 +88,7 @@
         </a>
         <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
         <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -83,7 +97,6 @@
 
   <main id="main">
 
-    <!-- ========== Hero ========== -->
     <section class="hero">
       <img class="hero-bg" alt=""
         src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1200&q=75"
@@ -101,15 +114,14 @@
           <a href="tel:+254702555093" class="btn btn-outline btn-light">Call 0702 555 093</a>
         </div>
         <ul class="hero-trust">
-          <li><i aria-hidden="true">👨‍🔧</i> Vetted team</li>
-          <li><i aria-hidden="true">🔒</i> Secure facility</li>
-          <li><i aria-hidden="true">🕕</i> Open 6am – 7pm</li>
-          <li><i aria-hidden="true">💳</i> M-Pesa &amp; cash</li>
+          <li><span aria-hidden="true">👨‍🔧</span> Vetted team</li>
+          <li><span aria-hidden="true">🔒</span> Secure facility</li>
+          <li><span aria-hidden="true">🕕</span> Open 6am – 7pm</li>
+          <li><span aria-hidden="true">💳</span> M-Pesa &amp; cash</li>
         </ul>
       </div>
     </section>
 
-    <!-- ========== Story ========== -->
     <section class="section section-light">
       <div class="container">
         <div class="article">
@@ -123,7 +135,6 @@
       </div>
     </section>
 
-    <!-- ========== Mission ========== -->
     <section class="section">
       <div class="container text-center">
         <h2>Why we do what we do.</h2>
@@ -131,7 +142,6 @@
       </div>
     </section>
 
-    <!-- ========== Values ========== -->
     <section class="section section-dark">
       <div class="container">
         <div class="section-title"><h2>The principles that guide every wash.</h2></div>
@@ -156,7 +166,6 @@
       </div>
     </section>
 
-    <!-- ========== Premium standard ========== -->
     <section class="section">
       <div class="container">
         <div class="section-title"><h2>What "premium" means to us.</h2></div>
@@ -171,7 +180,6 @@
       </div>
     </section>
 
-    <!-- ========== Facility ========== -->
     <section class="section section-light">
       <div class="container">
         <div class="section-title"><h2>A space built for your peace of mind.</h2></div>
@@ -189,7 +197,6 @@
       </div>
     </section>
 
-    <!-- ========== Team ========== -->
     <section class="section">
       <div class="container">
         <div class="section-title"><h2>The hands behind the shine.</h2></div>
@@ -203,7 +210,6 @@
       </div>
     </section>
 
-    <!-- ========== Rooted in Donholm ========== -->
     <section class="section section-dark">
       <div class="container text-center">
         <h2>Rooted in Donholm. Built for Eastlands.</h2>
@@ -212,7 +218,6 @@
       </div>
     </section>
 
-    <!-- ========== Testimonials ========== -->
     <section class="section">
       <div class="container">
         <div class="section-title"><h2>Trusted by your neighbours.</h2></div>
@@ -239,7 +244,6 @@
       </div>
     </section>
 
-    <!-- ========== Final CTA ========== -->
     <section class="section section-light">
       <div class="container text-center">
         <h2>Come see why Eastlands trusts CHROME.</h2>

@@ -1,37 +1,40 @@
 /* =========================================
-   CHROME — Booking flow v1.2
-   Updates: local-date fix (was UTC), safer
-            initialisation, fallback class sync
+   CHROME — Booking flow v2.1
+   v2.1 fixes: data-booking-total selector (H-02),
+   hours 06:00–18:00 (M-04), long-service + past-time
+   slot disabling, weekday in "Today" label (L-06).
    ========================================= */
 (function () {
   'use strict';
 
   const PRICES = {
     service: {
-      express:   { label: 'Express Shine',     price: 500,  time: '30–45 min' },
-      interior:  { label: 'Interior Revival',  price: 1200, time: '~90 min' },
-      signature: { label: 'Signature Detail',  price: 2500, time: '~3 hrs' },
-      ceramic:   { label: 'Ceramic Coating',   price: 3000, time: '1 day (quote)' },
-      engine:    { label: 'Engine Bay',        price: 800,  time: '~45 min' },
-      leather:   { label: 'Leather Care',      price: 1000, time: '~60 min' }
+      express:   { label: 'Express Shine',     price: 500,  time: '30–45 min',     duration: 45 },
+      interior:  { label: 'Interior Revival',  price: 1200, time: '~90 min',       duration: 90 },
+      signature: { label: 'Signature Detail',  price: 2500, time: '~3 hrs',        duration: 180 },
+      ceramic:   { label: 'Ceramic Coating',   price: 3000, time: '1 day (quote)', duration: 480 },
+      engine:    { label: 'Engine Bay',        price: 800,  time: '~45 min',       duration: 45 },
+      leather:   { label: 'Leather Care',      price: 1000, time: '~60 min',       duration: 60 }
     },
     vehicle: {
-      sedan:  { label: 'Sedan / Hatchback', multiplier: 1.0 },
-      suv:    { label: 'SUV / Crossover',    multiplier: 1.15 },
+      sedan:  { label: 'Sedan / Hatchback',   multiplier: 1.0 },
+      suv:    { label: 'SUV / Crossover',     multiplier: 1.15 },
       pickup: { label: 'Pickup / Double cab', multiplier: 1.25 },
-      van:    { label: 'Van / Minibus',      multiplier: 1.4 }
+      van:    { label: 'Van / Minibus',       multiplier: 1.4 }
     },
     addons: {
-      air:      { label: 'Air Freshener',       price: 100 },
-      tyre:     { label: 'Tyre Shine Refresh',  price: 150 },
-      headlight:{ label: 'Headlight Polish',    price: 500 },
-      odour:    { label: 'Odour Removal',       price: 600 },
-      clay:     { label: 'Clay Bar Treatment',  price: 800 },
-      trim:     { label: 'Trim Restoration',    price: 500 },
-      carpet:   { label: 'Carpet Shampoo',      price: 800 },
-      polish:   { label: 'Machine Polish',      price: 1500 }
+      air:       { label: 'Air Freshener',      price: 100 },
+      tyre:      { label: 'Tyre Shine Refresh', price: 150 },
+      headlight: { label: 'Headlight Polish',   price: 500 },
+      odour:     { label: 'Odour Removal',      price: 600 },
+      clay:      { label: 'Clay Bar Treatment', price: 800 },
+      trim:      { label: 'Trim Restoration',   price: 500 },
+      carpet:    { label: 'Carpet Shampoo',     price: 800 },
+      polish:    { label: 'Machine Polish',     price: 1500 }
     }
   };
+
+  const CLOSE_MIN = 19 * 60;
 
   const state = {
     step: 1,
@@ -44,14 +47,10 @@
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-  const prefersReduced = () =>
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function fmtKsh(n) { return 'KSh ' + n.toLocaleString('en-KE'); }
 
-  /* Format a Date as YYYY-MM-DD using LOCAL calendar fields.
-     toISOString() would return the UTC date, which shifts to the wrong
-     day for users east of UTC (e.g. Nairobi, UTC+3) after 21:00 local. */
   function toLocalISODate(d) {
     const y = d.getFullYear();
     const m = String(d.getMonth() + 1).padStart(2, '0');
@@ -76,16 +75,19 @@
     return Math.round(total);
   }
 
+  /* H-02 fix: update every [data-booking-total] element. */
   function updateTotalUI() {
-    const totalEl = $('#booking-total-value');
-    if (!totalEl) return;
+    const totalEls = document.querySelectorAll('[data-booking-total]');
+    if (!totalEls.length) return;
     const newVal = fmtKsh(computeTotal());
-    if (totalEl.textContent !== newVal) {
-      totalEl.textContent = newVal;
-      totalEl.classList.remove('counting');
-      void totalEl.offsetWidth;
-      totalEl.classList.add('counting');
-    }
+    totalEls.forEach(el => {
+      if (el.textContent !== newVal) {
+        el.textContent = newVal;
+        el.classList.remove('counting');
+        void el.offsetWidth;
+        el.classList.add('counting');
+      }
+    });
   }
 
   function renderServiceChoices() {
@@ -107,7 +109,9 @@
         state.service = input.value;
         syncSelectionState(root, 'service');
         updateTotalUI();
+        renderTimeSlots();
         validateStep1();
+        validateStep2();
       });
     });
   }
@@ -147,14 +151,15 @@
     if (!root) return;
     const days = buildDateSlots();
     root.innerHTML = days.map((d, i) => {
-      const val = toLocalISODate(d);           // ← fix: local, not UTC
+      const val = toLocalISODate(d);
       const dayName = d.toLocaleDateString('en-KE', { weekday: 'short' });
       const dayNum = d.getDate();
       const month = d.toLocaleDateString('en-KE', { month: 'short' });
+      const label = i === 0 ? `Today · ${dayName}` : dayName;
       return `
         <label class="slot">
           <input type="radio" name="date" value="${val}" ${state.date === val ? 'checked' : ''}>
-          <strong>${i === 0 ? 'Today' : dayName}</strong>
+          <strong>${label}</strong>
           <small>${dayNum} ${month}</small>
         </label>
       `;
@@ -164,24 +169,52 @@
       input.addEventListener('change', () => {
         state.date = input.value;
         syncSelectionState(root, 'date');
+        renderTimeSlots();
         validateStep2();
       });
     });
   }
 
+  function buildTimeSlots() {
+    const slots = [];
+    for (let h = 6; h <= 18; h++) slots.push(`${String(h).padStart(2, '0')}:00`);
+    return slots;
+  }
+
+  function isSlotDisabled(time, dateStr) {
+    if (!state.service) return false;
+    const svc = PRICES.service[state.service];
+    const [h, m] = time.split(':').map(Number);
+    const startMin = h * 60 + m;
+    if (startMin + svc.duration > CLOSE_MIN) return true;
+
+    if (dateStr) {
+      const now = new Date();
+      if (dateStr === toLocalISODate(now)) {
+        const nowMin = now.getHours() * 60 + now.getMinutes();
+        if (startMin < nowMin + 30) return true;
+      }
+    }
+    return false;
+  }
+
   function renderTimeSlots() {
     const root = $('#time-slots');
     if (!root) return;
-    const times = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00'];
+    const times = buildTimeSlots();
     root.innerHTML = times.map(t => {
       const [h, m] = t.split(':');
       const hr12 = ((+h + 11) % 12) + 1;
       const ampm = +h < 12 ? 'AM' : 'PM';
       const label = `${hr12}:${m} ${ampm}`;
+      const disabled = isSlotDisabled(t, state.date);
+      if (disabled && state.time === t) state.time = null;
+      const checked = state.time === t && !disabled;
       return `
-        <label class="slot">
-          <input type="radio" name="time" value="${t}" ${state.time === t ? 'checked' : ''}>
+        <label class="slot ${disabled ? 'disabled' : ''}">
+          <input type="radio" name="time" value="${t}" ${checked ? 'checked' : ''} ${disabled ? 'disabled' : ''}>
           <strong>${label}</strong>
+          ${disabled ? '<small>Unavailable</small>' : ''}
         </label>
       `;
     }).join('');
@@ -240,7 +273,7 @@
 
   function formatDate(iso) {
     if (!iso) return '—';
-    const d = new Date(iso + 'T00:00:00'); // local midnight, matches toLocalISODate
+    const d = new Date(iso + 'T00:00:00');
     return d.toLocaleDateString('en-KE', { weekday: 'long', day: 'numeric', month: 'long' });
   }
   function formatTime(t) {
@@ -308,7 +341,9 @@
         state.service = data.service || null;
         state.vehicle = data.vehicle || 'sedan';
         state.addons = new Set(data.addons || []);
-        renderServiceChoices(); renderVehicleOptions(); renderAddons();
+        renderServiceChoices();
+        renderVehicleOptions();
+        renderAddons();
         goToStep(1);
         validateStep1();
       });

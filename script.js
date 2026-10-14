@@ -1,10 +1,12 @@
 /* =========================================
-   CHROME — Main JavaScript v3.2
-   Updates: mobile menu focus trap,
-            form-status reset, announcement
-            bar 7-day expiry, sw cache sync
+   CHROME — Main JavaScript v4.1
+   v4.1 fixes: hamburger aria-label updates on toggle (M-07),
+   mobile menu anchors to header bottom (H-04),
+   aria-invalid on callback form (M-08),
+   hero-reveal skipped under reduced motion,
+   self-hosted-font awareness, no-op theme bootstrap
+   (inline head script handles initial paint).
    ========================================= */
-
 (function () {
   'use strict';
 
@@ -14,11 +16,9 @@
 
   /* ---------- Theme ---------- */
   function applyTheme(theme, persist) {
-    if (theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    else document.documentElement.removeAttribute('data-theme');
+
     if (persist) localStorage.setItem('chrome-theme', theme);
 
     const meta = document.querySelector('meta[name="theme-color"]');
@@ -30,10 +30,8 @@
   }
 
   function initTheme() {
-    const stored = localStorage.getItem('chrome-theme');
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    const theme = stored || (prefersLight ? 'light' : 'dark');
-    applyTheme(theme, false);
+    const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    applyTheme(current, false);
 
     document.querySelectorAll('.theme-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -43,7 +41,7 @@
     });
   }
 
-  /* ---------- Announcement bar (7-day dismissal) ---------- */
+  /* ---------- Announcement bar ---------- */
   function initAnnouncementBar() {
     const bar = document.getElementById('announcement-bar');
     if (!bar) return;
@@ -59,6 +57,7 @@
     btn.addEventListener('click', () => {
       bar.classList.add('hidden');
       localStorage.setItem('chrome-announcement-dismissed-at', String(Date.now()));
+      if (navMenu && navMenu.classList.contains('active')) positionMenu();
     });
   }
 
@@ -71,13 +70,22 @@
     onScroll();
   }
 
-  /* ---------- Mobile menu (with focus trap + restore) ---------- */
-  function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    if (!hamburger || !navMenu) return;
+  /* ---------- Mobile menu ---------- */
+  let navMenu, hamburger, lastFocused = null;
 
-    let lastFocused = null;
+  function positionMenu() {
+    if (!navMenu || !navMenu.classList.contains('active')) return;
+    const headerEl = document.querySelector('.header');
+    if (!headerEl) return;
+    const bottom = Math.max(0, headerEl.getBoundingClientRect().bottom);
+    navMenu.style.top = bottom + 'px';
+    navMenu.style.maxHeight = `calc(100dvh - ${bottom}px)`;
+  }
+
+  function initMobileMenu() {
+    hamburger = document.querySelector('.hamburger');
+    navMenu = document.querySelector('.nav-menu');
+    if (!hamburger || !navMenu) return;
 
     const focusables = () =>
       Array.from(navMenu.querySelectorAll('a[href], button:not([disabled])'))
@@ -87,7 +95,9 @@
       lastFocused = document.activeElement;
       hamburger.classList.add('active');
       hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Close menu');
       navMenu.classList.add('active');
+      positionMenu();
       document.body.style.overflow = 'hidden';
       const first = focusables()[0];
       if (first) first.focus();
@@ -96,11 +106,16 @@
     function closeMenu() {
       hamburger.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
       navMenu.classList.remove('active');
+      navMenu.style.top = '';
+      navMenu.style.maxHeight = '';
       document.body.style.overflow = '';
       if (lastFocused && document.contains(lastFocused)) lastFocused.focus();
       lastFocused = null;
     }
+
+    hamburger.setAttribute('aria-label', 'Open menu');
 
     hamburger.addEventListener('click', () => {
       if (navMenu.classList.contains('active')) closeMenu();
@@ -111,31 +126,23 @@
 
     document.addEventListener('keydown', (e) => {
       if (!navMenu.classList.contains('active')) return;
-
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeMenu();
-        return;
-      }
-
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
       if (e.key === 'Tab') {
         const items = focusables();
         if (!items.length) return;
         const first = items[0];
         const last = items[items.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
       }
     });
 
     window.addEventListener('resize', () => {
       if (isDesktop() && navMenu.classList.contains('active')) closeMenu();
+      else positionMenu();
     });
+    window.addEventListener('orientationchange', () => requestAnimationFrame(positionMenu));
+    window.addEventListener('scroll', () => positionMenu(), { passive: true });
   }
 
   /* ---------- FAQ accordion ---------- */
@@ -195,21 +202,12 @@
         divider.style.left = `${val}%`;
         range.setAttribute('aria-valuetext', `${val}% after`);
       };
-      range.addEventListener('input', update);
+      range.addEventListener('input', () => { update(); slider.classList.add('dragged'); });
       update();
-
-      slider.addEventListener('click', (e) => {
-        if (e.target === range) return;
-        const src = afterImg.src || slider.querySelector('.before-img')?.src;
-        const alt = afterImg.alt || slider.querySelector('.before-img')?.alt || 'Image preview';
-        if (src) openLightbox(src, slider, alt);
-      });
-
-      range.addEventListener('input', () => slider.classList.add('dragged'));
     });
   }
 
-  /* ---------- Lightbox (with focus trap + restore) ---------- */
+  /* ---------- Lightbox (kept for future "view full size" buttons) ---------- */
   let lightboxEl;
   let lightboxTrigger = null;
 
@@ -221,7 +219,7 @@
       lightboxEl.setAttribute('aria-modal', 'true');
       lightboxEl.setAttribute('aria-label', 'Image preview');
       lightboxEl.innerHTML = `
-        <button class="lightbox-close" aria-label="Close image">×</button>
+        <button class="lightbox-close" type="button" aria-label="Close image">×</button>
         <img alt="">
       `;
       document.body.appendChild(lightboxEl);
@@ -234,11 +232,8 @@
           if (!focusables.length) return;
           const first = focusables[0];
           const last = focusables[focusables.length - 1];
-          if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault(); last.focus();
-          } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault(); first.focus();
-          }
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
         }
       });
     }
@@ -294,8 +289,9 @@
     staggers.forEach(el => staggerObserver.observe(el));
   }
 
-  /* ---------- Hero title reveal ---------- */
+  /* ---------- Hero title reveal (skip under reduced motion) ---------- */
   function initHeroReveal() {
+    if (prefersReduced) return;
     document.querySelectorAll('.hero-reveal').forEach(el => {
       const text = el.textContent.trim();
       if (!text) return;
@@ -310,19 +306,23 @@
     if (!callbackForm) return;
     const statusDiv = document.getElementById('form-status');
 
+    const clearInvalid = () => {
+      callbackForm.querySelectorAll('[aria-invalid="true"]').forEach(el => el.removeAttribute('aria-invalid'));
+    };
+
     callbackForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (statusDiv) { statusDiv.textContent = ''; statusDiv.className = 'form-status'; }
+      clearInvalid();
 
-      // Reset state on every submit so a previous error/success doesn't linger
-      if (statusDiv) {
-        statusDiv.textContent = '';
-        statusDiv.className = 'form-status';
-      }
-
-      const name = callbackForm.querySelector('#cb-name')?.value.trim() || '';
-      const phone = callbackForm.querySelector('#cb-phone')?.value.trim() || '';
+      const nameEl = callbackForm.querySelector('#cb-name');
+      const phoneEl = callbackForm.querySelector('#cb-phone');
+      const name = (nameEl?.value || '').trim();
+      const phone = (phoneEl?.value || '').trim();
 
       if (!name || !phone) {
+        const bad = !name ? nameEl : phoneEl;
+        if (bad) { bad.setAttribute('aria-invalid', 'true'); bad.focus(); }
         if (statusDiv) {
           statusDiv.textContent = 'Please enter your name and phone number.';
           statusDiv.className = 'form-status error';
@@ -330,9 +330,7 @@
         return;
       }
 
-      const text = encodeURIComponent(
-        `Hello CHROME, I'd like a callback.\n\nName: ${name}\nPhone: ${phone}`
-      );
+      const text = encodeURIComponent(`Hello CHROME, I'd like a callback.\n\nName: ${name}\nPhone: ${phone}`);
       window.open(`https://wa.me/254702555093?text=${text}`, '_blank', 'noopener');
       if (statusDiv) {
         statusDiv.textContent = 'Opening WhatsApp… If nothing happens, please call 0702 555 093.';
@@ -494,9 +492,6 @@
     initPWA();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();

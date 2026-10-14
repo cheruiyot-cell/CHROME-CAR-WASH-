@@ -27,12 +27,30 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
 
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://wa.me">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1605618313023-1ee4b4e8f25a?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <link rel="preload" as="image"
+    imagesrcset="https://images.unsplash.com/photo-1605618313023-1ee4b4e8f25a?auto=format&fit=crop&w=640&q=70 640w,
+                 https://images.unsplash.com/photo-1605618313023-1ee4b4e8f25a?auto=format&fit=crop&w=1200&q=75 1200w,
+                 https://images.unsplash.com/photo-1605618313023-1ee4b4e8f25a?auto=format&fit=crop&w=1800&q=75 1800w"
+    imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -70,7 +88,7 @@
         </a>
         <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
         <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -109,7 +127,6 @@
         <div class="rating-display" aria-hidden="true">4.9</div>
         <div class="rating-stars-large" aria-hidden="true">★★★★★</div>
         <p>98% of customers say they would recommend CHROME.<br>2,500+ cars washed · 300+ verified reviews</p>
-        <a href="#" class="btn btn-outline">Read Our Google Reviews</a>
       </div>
     </section>
 
@@ -199,7 +216,7 @@
       <div class="container text-center">
         <h2>Had a great experience? Tell others.</h2>
         <p>Your feedback helps other drivers in Eastlands find a car wash they can trust.</p>
-        <a href="#" class="btn btn-whatsapp">Leave a Google Review</a>
+        <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20leave%20a%20review." class="btn btn-whatsapp">Share Your Feedback</a>
       </div>
     </section>
 

@@ -1,54 +1,31 @@
 {
   "name": "CHROME Car Wash & Detailing",
   "short_name": "CHROME",
-  "description": "Premium car wash and detailing in Donholm, Nairobi. Book via WhatsApp.",
+  "description": "Premium car wash & detailing in Donholm, Nairobi. Book via WhatsApp.",
   "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
+  "orientation": "portrait",
   "background_color": "#0F1115",
   "theme_color": "#0F1115",
   "lang": "en-KE",
   "dir": "ltr",
-  "categories": ["business", "automotive", "lifestyle"],
+  "categories": ["automotive", "business", "lifestyle"],
   "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon-maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
   ],
   "shortcuts": [
     {
       "name": "Book a service",
       "short_name": "Book",
-      "description": "Start a 3-step booking",
-      "url": "/book.html"
+      "url": "/book.html",
+      "description": "Start a 3-step booking"
     },
     {
-      "name": "Contact us",
-      "short_name": "Contact",
-      "description": "Call or WhatsApp",
-      "url": "/contact.html"
-    },
-    {
-      "name": "See prices",
-      "short_name": "Pricing",
-      "description": "View transparent pricing",
-      "url": "/pricing.html"
+      "name": "WhatsApp us",
+      "short_name": "WhatsApp",
+      "url": "https://wa.me/254702555093"
     }
   ]
 }

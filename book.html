@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Book a Service — CHROME Car Wash & Detailing Donholm, Nairobi</title>
+  <meta name="description" content="Book your car wash or detailing service at CHROME in Donholm. Pick your service, vehicle, date, and time. Confirm via WhatsApp in 30 seconds.">
+  <meta name="theme-color" content="#0F1115">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHROME Car Wash & Detailing">
+  <meta property="og:locale" content="en_KE">
+  <meta property="og:title" content="Book a Service — CHROME Car Wash & Detailing">
+  <meta property="og:description" content="Pick your service, vehicle, date, and time. Confirm via WhatsApp in 30 seconds.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://chrome-carwash.example/book.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book a Service — CHROME Car Wash & Detailing">
+  <meta name="twitter:description" content="3-step booking. Confirm via WhatsApp in 30 seconds.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
+
+  <link rel="canonical" href="https://chrome-carwash.example/book.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://wa.me">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="announcement-bar" id="announcement-bar">
+    Same-day slots available in Donholm.
+    <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%20want%20to%20book%20a%20same-day%20slot.">WhatsApp or call before 2 PM</a>.
+    <button class="announcement-dismiss" type="button" aria-label="Dismiss announcement">×</button>
+  </div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-menu-cta"><a href="book.html" class="btn btn-whatsapp">Book a service</a></li>
+        <li class="nav-menu-cta"><a href="tel:+254702555093" class="phone-link">Call 0702 555 093</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
+        </button>
+        <a href="tel:+254702555093" class="nav-icon-btn" aria-label="Call 0702 555 093">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21a1 1 0 0 0 .25-1.02A11.36 11.36 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg>
+        </a>
+        <a href="https://wa.me/254702555093" class="nav-icon-btn nav-icon-btn-wa" aria-label="WhatsApp us">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+        </a>
+        <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
+        <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="section section-light pt-3-5">
+      <div class="container">
+        <div class="booking-shell" id="booking-shell">
+
+          <div class="section-title">
+            <span class="eyebrow">BOOK A SERVICE</span>
+            <h1 class="article-h1">Book in 3 steps.</h1>
+            <p>Pick your service, add a few details, and we'll confirm via WhatsApp. No account. No payment online.</p>
+          </div>
+
+          <div id="last-booking-banner" class="last-booking-banner" aria-live="polite" hidden></div>
+
+          <div class="booking-progress" role="list" aria-label="Booking progress">
+            <div class="booking-step active" data-step="1" role="listitem">Service</div>
+            <div class="booking-step" data-step="2" role="listitem">Date &amp; time</div>
+            <div class="booking-step" data-step="3" role="listitem">Confirm</div>
+          </div>
+
+          <div class="booking-panel active" data-panel="1">
+            <h2>Choose your service</h2>
+            <p class="sub">All prices are "from" — we'll confirm the exact price on WhatsApp.</p>
+
+            <div class="choice-grid" id="service-choices"></div>
+
+            <h3 class="mt-1">Vehicle type</h3>
+            <div class="pill-row" id="vehicle-options"></div>
+
+            <div class="booking-total" aria-live="polite">
+              <span class="booking-total-label">Estimated total</span>
+              <span class="booking-total-value" data-booking-total>KSh 0</span>
+            </div>
+
+            <div class="booking-nav">
+              <button type="button" class="btn btn-whatsapp" id="btn-to-step-2" disabled>Continue</button>
+            </div>
+          </div>
+
+          <div class="booking-panel" data-panel="2">
+            <h2>Pick a date &amp; time</h2>
+            <p class="sub">We're open every day from 6 AM to 7 PM. Select a slot below.</p>
+
+            <h3>Choose a day</h3>
+            <div class="datetime-grid" id="date-slots"></div>
+
+            <h3 class="mt-1">Choose a time</h3>
+            <div class="datetime-grid" id="time-slots"></div>
+
+            <h3 class="mt-1">Add-ons (optional)</h3>
+            <div class="addon-list" id="addon-list"></div>
+
+            <div class="booking-total" aria-live="polite">
+              <span class="booking-total-label">Estimated total</span>
+              <span class="booking-total-value" data-booking-total>KSh 0</span>
+            </div>
+
+            <div class="booking-nav">
+              <button type="button" class="btn btn-outline" id="btn-back-1">Back</button>
+              <button type="button" class="btn btn-whatsapp" id="btn-to-step-3" disabled>Continue</button>
+            </div>
+          </div>
+
+          <div class="booking-panel" data-panel="3">
+            <h2>Review &amp; confirm</h2>
+            <p class="sub">Check your details. Tapping "Confirm on WhatsApp" opens a chat with your booking pre-filled.</p>
+
+            <div class="summary-list" id="booking-summary"></div>
+
+            <p class="text-muted text-sm">By tapping confirm, WhatsApp will open with your details. Send the message to lock your slot. You pay on-site after we finish — M-Pesa or cash.</p>
+
+            <div class="booking-nav">
+              <button type="button" class="btn btn-outline" id="btn-back-2">Back</button>
+              <button type="button" class="btn btn-whatsapp" id="btn-submit">Confirm on WhatsApp</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Prefer to talk?</h2>
+          <p>No problem. WhatsApp or call us directly — we'll book you in seconds.</p>
+        </div>
+        <div class="hero-cta hero-cta-center">
+          <a href="https://wa.me/254702555093?text=Hello%20CHROME%2C%20I%27d%20like%20to%20book%20a%20service." class="btn btn-whatsapp">WhatsApp Us</a>
+          <a href="tel:+254702555093" class="btn btn-outline">Call 0702 555 093</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>CHROME</h4><p>Premium car wash &amp; detailing in Donholm, Nairobi.</p></div>
+        <div><h4>Site</h4><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></div>
+        <div><h4>Contact</h4><a href="tel:+254702555093">Phone: 0702 555 093</a><a href="https://wa.me/254702555093">WhatsApp</a></div>
+        <div><h4>Hours</h4><p>Mon–Sun: 6:00 AM – 7:00 PM</p><p>Payment: M-Pesa · Cash</p></div>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-meta-label">Project</span>
+        <a href="case-study.html">Case study</a>
+        <a href="styleguide.html">Style guide</a>
+        <a href="dashboard.html">Owner dashboard</a>
+        <a href="accessibility.html">Accessibility</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="current-year"></span> CHROME. All rights reserved.</p>
+        <p class="footer-note">Concept project — brand and content created for portfolio purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/254702555093" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-1 1.16-.2.2-.34.22-.63.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 22a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 0 1 2.17 12.1C2.17 6.65 6.6 2.22 12.05 2.22c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.89-9.88 9.89m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"/></svg>
+  </a>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>

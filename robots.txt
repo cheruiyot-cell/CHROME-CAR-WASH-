@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /dashboard.html
+Disallow: /styleguide.html
 
 Sitemap: https://chrome-carwash.example/sitemap.xml

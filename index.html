@@ -7,7 +7,6 @@
   <meta name="description" content="CHROME is Nairobi Eastlands' premium car wash and detailing studio in Donholm. Hand washing, interior deep clean, ceramic coating. Book via WhatsApp or call 0702 555 093.">
   <meta name="theme-color" content="#0F1115">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CHROME Car Wash & Detailing">
   <meta property="og:locale" content="en_KE">
@@ -18,25 +17,40 @@
   <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://chrome-carwash.example/index.html">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CHROME — Premium Car Wash & Detailing in Donholm">
   <meta name="twitter:description" content="Nairobi Eastlands' premium car wash. Book via WhatsApp 0702 555 093.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75">
 
-  <!-- Canonical & PWA -->
   <link rel="canonical" href="https://chrome-carwash.example/index.html">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
 
-  <!-- Preconnects -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://wa.me">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=75" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
+  <link rel="preload" as="image"
+    imagesrcset="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=640&q=70 640w,
+                 https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=75 1200w,
+                 https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1800&q=75 1800w"
+    imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 
   <script type="application/ld+json">
@@ -48,17 +62,11 @@
     "url": "https://chrome-carwash.example/",
     "image": "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&h=630&q=75",
     "telephone": "+254702555093",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Donholm",
-      "addressRegion": "Nairobi",
-      "addressCountry": "KE"
-    },
+    "address": { "@type": "PostalAddress", "addressLocality": "Donholm", "addressRegion": "Nairobi", "addressCountry": "KE" },
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "06:00",
-      "closes": "19:00"
+      "opens": "06:00", "closes": "19:00"
     }],
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "300" },
     "priceRange": "KSh 500 - KSh 3,000"
@@ -78,7 +86,6 @@
   <header class="header">
     <nav class="nav container" aria-label="Main navigation">
       <a href="index.html" class="logo" aria-label="CHROME — Home">CHROME</a>
-
       <ul class="nav-menu" id="nav-menu">
         <li><a href="services.html">Services</a></li>
         <li><a href="pricing.html">Pricing</a></li>
@@ -89,7 +96,6 @@
         <li class="nav-menu-cta"><a href="book.html" class="btn btn-whatsapp">Book a service</a></li>
         <li class="nav-menu-cta"><a href="tel:+254702555093" class="phone-link">Call 0702 555 093</a></li>
       </ul>
-
       <div class="nav-actions">
         <button class="nav-icon-btn theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false">
           <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05z"/></svg>
@@ -103,7 +109,7 @@
         </a>
         <a href="book.html" class="btn btn-whatsapp nav-cta-desktop">Book a service</a>
         <a href="tel:+254702555093" class="nav-phone-desktop">0702 555 093</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -112,7 +118,7 @@
 
   <main id="main">
 
-    <!-- ========== Hero ========== -->
+    <!-- Hero -->
     <section class="hero">
       <img class="hero-bg" alt=""
         src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=75"
@@ -132,15 +138,15 @@
         </div>
 
         <ul class="hero-trust">
-          <li><i aria-hidden="true">★</i> 4.9/5 Google rating (300+ reviews)</li>
-          <li><i aria-hidden="true">🔒</i> CCTV-monitored facility</li>
-          <li><i aria-hidden="true">🕕</i> Open 6am – 7pm</li>
-          <li><i aria-hidden="true">💳</i> M-Pesa &amp; cash accepted</li>
+          <li><span aria-hidden="true">★</span> 4.9/5 Google rating (300+ reviews)</li>
+          <li><span aria-hidden="true">🔒</span> CCTV-monitored facility</li>
+          <li><span aria-hidden="true">🕕</span> Open 6am – 7pm</li>
+          <li><span aria-hidden="true">💳</span> M-Pesa &amp; cash accepted</li>
         </ul>
       </div>
     </section>
 
-    <!-- ========== Social proof ========== -->
+    <!-- Social proof -->
     <section class="social-proof" aria-label="Trust signals">
       <div class="container">
         <div class="social-proof-item"><span class="icon" aria-hidden="true">★</span> 4.9/5 (300+ Google Reviews)</div>
@@ -150,7 +156,7 @@
       </div>
     </section>
 
-    <!-- ========== Problem ========== -->
+    <!-- Problem -->
     <section class="section problem" aria-labelledby="problem-heading">
       <div class="container">
         <div class="section-title">
@@ -161,7 +167,7 @@
       </div>
     </section>
 
-    <!-- ========== Services ========== -->
+    <!-- Services -->
     <section class="section section-light" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-title">
@@ -262,7 +268,7 @@
       </div>
     </section>
 
-    <!-- ========== Why CHROME ========== -->
+    <!-- Why CHROME -->
     <section class="section section-dark" aria-labelledby="why-heading">
       <div class="container">
         <div class="section-title">
@@ -304,7 +310,7 @@
       </div>
     </section>
 
-    <!-- ========== How it works ========== -->
+    <!-- How it works -->
     <section class="section section-light" aria-labelledby="how-heading">
       <div class="container">
         <div class="section-title">
@@ -335,7 +341,7 @@
       </div>
     </section>
 
-    <!-- ========== Pricing snapshot ========== -->
+    <!-- Pricing snapshot -->
     <section class="section" aria-labelledby="pricing-heading">
       <div class="container">
         <div class="section-title">
@@ -381,7 +387,7 @@
       </div>
     </section>
 
-    <!-- ========== Gallery preview ========== -->
+    <!-- Gallery preview -->
     <section class="section section-light" aria-labelledby="gallery-heading">
       <div class="container">
         <div class="section-title">
@@ -428,7 +434,7 @@
       </div>
     </section>
 
-    <!-- ========== Testimonials ========== -->
+    <!-- Testimonials -->
     <section class="section" aria-labelledby="testimonials-heading">
       <div class="container">
         <div class="section-title">
@@ -458,7 +464,7 @@
       </div>
     </section>
 
-    <!-- ========== Location ========== -->
+    <!-- Location -->
     <section class="section section-dark" aria-labelledby="location-heading">
       <div class="container">
         <div class="section-title">
@@ -479,7 +485,7 @@
       </div>
     </section>
 
-    <!-- ========== FAQ ========== -->
+    <!-- FAQ -->
     <section class="section section-light" aria-labelledby="faq-heading">
       <div class="container">
         <div class="section-title">
@@ -519,7 +525,7 @@
       </div>
     </section>
 
-    <!-- ========== Final CTA ========== -->
+    <!-- Final CTA -->
     <section class="section section-dark" aria-labelledby="final-cta-heading">
       <div class="container text-center">
         <h2 id="final-cta-heading">Ready for a spotless car without the stress?</h2>

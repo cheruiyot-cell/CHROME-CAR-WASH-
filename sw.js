@@ -1,7 +1,9 @@
-/* CHROME — Service Worker v3
-   Navigation uses stale-while-revalidate so cached pages load instantly
-   on 3G. Cache name bumped to force a clean install of the new strategy. */
-const CACHE = 'chrome-v3';
+/* CHROME — Service Worker v4.1
+   Fixes: extensionless-safe SHELL (uses .html consistently),
+   network-first for book.html so the booking flow can't go stale,
+   Promise.allSettled so a single missing asset doesn't kill install. */
+
+const CACHE = 'chrome-v4-1';
 const SHELL = [
   'index.html',
   'services.html',
@@ -15,15 +17,16 @@ const SHELL = [
   'style.css',
   'script.js',
   'booking.js',
-  'manifest.webmanifest'
+  'manifest.webmanifest',
+  'icon.svg'
 ];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open(CACHE)
-      .then(c => c.addAll(SHELL))
-      .then(() => self.skipWaiting())
-  );
+  e.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await Promise.allSettled(SHELL.map(url => cache.add(url).catch(() => null)));
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener('activate', (e) => {
@@ -41,19 +44,30 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   const isSameOrigin = url.origin === self.location.origin;
 
-  // Navigation requests: serve cache immediately, refresh in background.
+  // Booking flow: network-first so the user never sees stale state.
+  if (isSameOrigin && (url.pathname === '/book.html' || url.pathname === '/book')) {
+    e.respondWith((async () => {
+      try {
+        const fresh = await fetch(req);
+        const cache = await caches.open(CACHE);
+        if (fresh && fresh.ok) cache.put(req, fresh.clone());
+        return fresh;
+      } catch {
+        const cache = await caches.open(CACHE);
+        return (await cache.match(req)) || caches.match('offline.html');
+      }
+    })());
+    return;
+  }
+
+  // Navigation: cache-first with background refresh.
   if (req.mode === 'navigate') {
     e.respondWith((async () => {
       const cache = await caches.open(CACHE);
       const cached = await cache.match(req);
-
       const network = fetch(req)
-        .then(res => {
-          if (res && res.ok) cache.put(req, res.clone());
-          return res;
-        })
+        .then(res => { if (res && res.ok) cache.put(req, res.clone()); return res; })
         .catch(() => null);
-
       if (cached) return cached;
       const fresh = await network;
       if (fresh) return fresh;
@@ -67,21 +81,15 @@ self.addEventListener('fetch', (e) => {
     e.respondWith((async () => {
       const cache = await caches.open(CACHE);
       const cached = await cache.match(req);
-
       const network = fetch(req)
-        .then(res => {
-          if (res && res.ok) cache.put(req, res.clone());
-          return res;
-        })
+        .then(res => { if (res && res.ok) cache.put(req, res.clone()); return res; })
         .catch(() => null);
-
       return cached || (await network) || Response.error();
     })());
     return;
   }
 
-  // Cross-origin (fonts, images): cache-first, opportunistically cache
-  // only successful same-host responses from known CDNs.
+  // Trusted CDNs: cache-first, opportunistically cache.
   const trustedCDN =
     url.hostname.includes('fonts.googleapis.com') ||
     url.hostname.includes('fonts.gstatic.com') ||
@@ -89,11 +97,9 @@ self.addEventListener('fetch', (e) => {
 
   e.respondWith((async () => {
     if (!trustedCDN) return fetch(req);
-
     const cache = await caches.open(CACHE);
     const cached = await cache.match(req);
     if (cached) return cached;
-
     try {
       const res = await fetch(req);
       if (res && res.ok && res.type !== 'opaque') cache.put(req, res.clone());

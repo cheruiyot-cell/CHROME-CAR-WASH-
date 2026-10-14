@@ -9,10 +9,26 @@
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://chrome-carwash.example/styleguide.html">
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='600' text-anchor='middle' fill='%23D4AF37'%3EC%3C/text%3E%3C/svg%3E">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('chrome-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === 'light' ? '#F5F4F0' : '#0F1115';
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,7 +57,7 @@
           <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-13a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V5a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM4 12a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2H5a1 1 0 0 1-1-1zm13 0a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1-1-1zM6.34 6.34a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 1 1-1.41 1.41L6.34 7.76a1 1 0 0 1 0-1.42zm9.9 9.9a1 1 0 0 1 1.41 0l1.42 1.41a1 1 0 1 1-1.42 1.42l-1.41-1.42a1 1 0 0 1 0-1.41zm1.41-9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0zm-9.9 9.9a1 1 0 0 1 0 1.41l-1.41 1.42a1 1 0 1 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 0z"/></svg>
         </button>
         <a href="index.html" class="btn btn-whatsapp nav-cta-desktop">See site</a>
-        <button class="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -60,7 +76,6 @@
       </div>
     </section>
 
-    <!-- COLORS -->
     <section class="sg-section">
       <div class="container">
         <div class="sg-heading">
@@ -98,7 +113,6 @@
       </div>
     </section>
 
-    <!-- TYPOGRAPHY -->
     <section class="sg-section section-light">
       <div class="container">
         <div class="sg-heading">
@@ -115,12 +129,11 @@
       </div>
     </section>
 
-    <!-- BUTTONS -->
     <section class="sg-section">
       <div class="container">
         <div class="sg-heading">
           <h2>Buttons</h2>
-          <p>Six variants. Minimum tap target 48px. Focus rings use the gold accent.</p>
+          <p>Four variants. Minimum tap target 48px. Focus rings use the gold accent.</p>
         </div>
         <div class="sg-row">
           <a href="#" class="btn btn-primary">Primary</a>
@@ -139,7 +152,6 @@
       </div>
     </section>
 
-    <!-- SPACING -->
     <section class="sg-section section-light">
       <div class="container">
         <div class="sg-heading">
@@ -154,7 +166,6 @@
       </div>
     </section>
 
-    <!-- CARDS -->
     <section class="sg-section">
       <div class="container">
         <div class="sg-heading">
@@ -188,15 +199,14 @@
       </div>
     </section>
 
-    <!-- FORM FIELDS -->
     <section class="sg-section section-light">
       <div class="container">
         <div class="sg-heading">
           <h2>Form fields</h2>
-          <p>Always labelled. Always 48px minimum height.</p>
+          <p>Always labelled. Always 48px minimum height. Invalid fields get <code>aria-invalid="true"</code>.</p>
         </div>
         <div class="form-narrow">
-          <form class="contact-form">
+          <form class="contact-form" onsubmit="return false;">
             <div class="form-field">
               <label for="demo-text">Text input <span class="req" aria-hidden="true">*</span></label>
               <input id="demo-text" type="text" placeholder="e.g. Brian Otieno">
@@ -217,13 +227,12 @@
               <label for="demo-textarea">Textarea</label>
               <textarea id="demo-textarea" placeholder="Tell us more…"></textarea>
             </div>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
     </section>
 
-    <!-- CHIPS & PILLS -->
     <section class="sg-section">
       <div class="container">
         <div class="sg-heading">
@@ -243,7 +252,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="sg-section section-light">
       <div class="container">
         <div class="sg-heading">
@@ -263,7 +271,6 @@
       </div>
     </section>
 
-    <!-- BADGES -->
     <section class="sg-section">
       <div class="container">
         <div class="sg-heading">
@@ -278,7 +285,6 @@
       </div>
     </section>
 
-    <!-- COMPARE COMPONENT -->
     <section class="sg-section section-light">
       <div class="container">
         <div class="sg-heading">
